@@ -1,0 +1,48 @@
+ForwardX11 yes
+ForwardAgent yes
+Compression yes
+# timeout beim verbinden
+ConnectTimeout 10
+# keepalive pakete alle 30 sek
+TCPKeepAlive yes
+ServerAliveInterval 30
+
+# zuhaus
+Host hal
+HostName bara.ath.cx
+User bara
+
+# server
+Host flatline
+HostName flatline.zebar.de
+User root
+
+Host molly
+Hostname crasawa.com
+
+Host case
+HostName case.zebar.de
+User root
+Port 122
+
+Host finn
+HostName finn.zebar.de
+Port 322
+
+Host zebar.de
+User root
+
+Host armitage
+HostName armitage.zebar.de
+Port 622
+
+
+# Beuth hochschulrechner
+Host *.beuth-hochschule.de
+User s36321
+
+Host compute
+HostName compute.beuth-hochschule.de
+User s36321
+
+

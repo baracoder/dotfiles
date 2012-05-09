@@ -1,0 +1,21 @@
+#!/bin/bash
+# connect to host using ssh and start vnc server on running session
+
+[ "$1" = "" ] && echo "$0 user@host [NR(0..)] [sshopts]" && exit 1
+
+TARGET="$1"
+shift
+
+NR="$1"
+[ "$1" = "" ] && NR=0
+shift
+
+sleep 10 &&\
+        vncviewer -encodings Tight localhost:$NR &
+
+SSHOPTS=$*
+ssh $SSHOPTS -f -L 590$NR:localhost:5900 $TARGET \
+        'x11vnc -localhost -nopw -once -display :0' 
+
+
+wait

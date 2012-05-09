@@ -1,0 +1,20 @@
+#!/bin/bash
+
+
+# mklink file destination
+mklink() {
+    echo -ne "linking $1\t"
+    [ -e ~/$2 -a ! -L ~/$2 ] && echo "$2 is not a symlink" && return
+    mkdir -p ` dirname ~/$2`
+    ln -sf  $PWD/$1 ~/$2 && echo "OK" || echo "!!"
+}
+
+#       source              target
+mklink  cfgs/vimrc           .vimrc
+mklink  cfgs/vim             .vim
+mklink  cfgs/zshrc           .zshrc
+mklink  cfgs/Xmodmap         .Xmodmap
+mklink  cfgs/ssh_config      .ssh/config
+mklink  cfgs/gitconfig       .gitconfig
+mklink  cfgs/profile         .profile
+

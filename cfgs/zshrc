@@ -1,0 +1,83 @@
+source /etc/profile
+source ~/.profile
+
+# emacs key bindings
+bindkey -e
+
+
+# aliase
+alias ls='ls --color=auto -p'
+alias grep='grep --color=auto'
+alias g=git
+alias lmap="nmap 192.168.0.0/24"
+alias open="xdg-open"
+alias es="vim --servername default"
+alias e='vim --servername default --remote-silent'
+alias psgrep='ps aux|grep -i'
+alias c='python -ic "from __future__ import division; from math import *; from random import *"'
+
+alias -g G='|grep'
+alias -g GR='|grep -iR'
+alias -s log=vim
+alias -s html=vim
+
+
+
+# misc
+unsetopt beep # kein beepen
+setopt autocd # verzeichnis wechseln ohne cd
+setopt extended_glob
+setopt completeinword # autocompletion mitten im wort
+
+
+# history zeug
+export HISTSIZE=2000
+export HISTFILE="$HOME/.history"
+export SAVEHIST=$HISTSIZE
+setopt hist_ignore_all_dups # keine doppelten einträge
+setopt hist_ignore_space    # spaces zusammenfassen
+setopt inc_append_history   # befehl sofort in history anhängen
+
+
+# completion
+zstyle ':completion:*:processes' command 'ps -au$USER'
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'        # smartcase
+zstyle ':completion:*' verbose yes
+
+_force_rehash() {
+  (( CURRENT == 1 )) && rehash
+  return 1    # Because we didn't really complete anything
+}
+zstyle ':completion:::::' completer _force_rehash _complete _approximate
+zstyle ':completion:*:default' list-prompt '%S%M matches%s'
+zstyle ':completion:*:manuals' separate-sections true
+zstyle ':completion:*:manuals.(^1*)' insert-sections true
+zstyle ':completion:*' menu select
+
+# ssh hosts
+local _myhosts
+_myhosts=( ${${${${(f)"$(<$HOME/.ssh/known_hosts)"}:#[0-9]*}%%\ *}%%,*} )
+
+# correction
+setopt correctall
+
+
+
+#precmd () {print -Pn "\e]0;%n@%M: %~\a"}
+
+
+
+# farben
+autoload -U compinit colors promptinit
+compinit
+colors
+promptinit
+prompt adam2
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
+
+# editor
+autoload edit-command-line
+zle -N edit-command-line
+bindkey '^Xe' edit-command-line

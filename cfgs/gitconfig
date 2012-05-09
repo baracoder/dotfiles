@@ -1,0 +1,52 @@
+[user]                                  # Benutzerdaten
+    name = Herman Fries
+    email = baracoder@googlemail.com
+
+[core]
+    editor = vim                        # standardeditor festlegen
+    excludesfile = ~/.gitignore         # globale .gitignore
+
+[merge]                                 # tool für "git mergetool" festlegen
+    tool = meld
+
+[diff]                                  # tool für "git difftool" festlegen
+    tool = meld
+
+[color]                                 # Farben einschalten
+    ui = auto
+    diff = auto
+    status = auto
+    branch = auto
+
+[alias]                                 # Abkürzungen
+    st  = status
+    ci  = commit
+    cm  = commit -m                     # commit text als parameter
+    co  = checkout
+    pl  = pull                          # pull mit merge  ausführen
+    plr = pull --rebase                 # pull mit rebase ausführen
+    f   = fetch
+    ps  = push
+    b   = branch
+    m   = merge
+    dt  = difftool
+    mt  = mergetool
+    unstage = reset HEAD --             # Datei aus index entfernen
+
+    vis = !gitk --all &                 # Visualisierungen:
+    tig = !tig --all                    # "git-gui", "gitk und "tig" müssen
+    num = shortlog -s -n                # vielleicht nachinstalliert werden
+    g   = gui
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
+
+    # readonly server zum verteilen im lokalen netz
+    # mit
+    #   git pull git://HOSTNAME/
+    # zugreifen
+    serve = daemon --reuseaddr --base-path=.git --export-all --verbose
+
+    dif = diff                          # Abkürzungen für typos
+    psuh = push
+    psh = push
+
+# weitere git-tipps: http://gitready.com/

@@ -1,0 +1,68 @@
+" Anzeige
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+colorscheme koehler                         " Farbwahl
+set list listchars=tab:»·,trail:·,extends:#
+                                            " Tabs, Leerzeichen am Ende von
+                                            " Zeilen und anzeigen
+set title                                   " Terminal-Titel anpassen
+set visualbell                              " Blinken statt Beep
+syntax on                                   " Syntax Highliting
+set suffixes+=.info,.aux,.log,.dvi,.bbl,.out,.o,.lo,.pyc
+                                            " bei Autovervollständigung abwerten
+set so=5                                    " 5 Zeilen Abstand zwischen Cursor
+                                            " und Rand
+set ruler                                   " Show cursor position all the time
+set foldmethod=syntax                       " Blöcke Falten nach syntax
+autocmd BufEnter * setlocal cursorline      " Zeile mit Cursor unterstreichen
+
+" Suche
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set hlsearch                                " Suchergebnisse vorheben
+set is                                      " beim Eingeben suchen
+set smartcase                               " smartcase for searching
+
+" Eigene Kürzel
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let mapleader=","                           " set lead for custom bindings
+" ,ev -> vimrc öffnen
+nmap <silent> <leader>ev :e ~/.vimrc<CR>
+set pastetoggle=<F2>                        " Einfügen Modus
+" ; an stelle von : für commandos
+nnoremap ; :
+" Q für textformatierung
+vmap Q gq
+nmap Q gqap
+" go over warped lines
+nnoremap j gj
+nnoremap k gk
+" easier window nav
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+" Suchergebnisse ausblenden
+nmap <silent> <leader>/ :nohlsearch<CR>
+
+" Eingaben
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set bs=2                                    " Allow backspacing over everything
+                                            " in insert mode
+set ai                                      " Always set auto-indenting on
+set softtabstop=4 shiftwidth=4 expandtab    " Each indentation level is four
+                                            " spaces. Tabs are not used.
+
+" Anderes
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible                            " Use Vim defaults (much better!)
+set textwidth=72                            " standardzeilenlänge
+set viminfo='20,\"500                       " Keep a .viminfo file.
+set history=50                              " keep 50 lines of command history
+set autowrite                               " Datei bei :next usw speichern
+if filereadable("/etc/vim/vimrc.local")     " lokale vimrc falls vorhandne laden
+  source /etc/vim/vimrc.local
+endif
+
+" Pfadabhängige Einstellungen
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd BufNewFile,BufRead ~/src/infoini/templates/* se tw=0 nowrap
+                                                " Zeilen nicht umbrechen
