@@ -1,6 +1,5 @@
 ForwardX11 yes
 ForwardAgent yes
-Compression yes
 # timeout beim verbinden
 ConnectTimeout 10
 # keepalive pakete alle 30 sek
@@ -15,6 +14,7 @@ User bara
 # server
 Host flatline
 HostName flatline.zebar.de
+Compression yes
 User root
 
 Host molly
@@ -31,18 +31,22 @@ Port 322
 
 Host zebar.de
 User root
+Compression yes
 
 Host armitage
 HostName armitage.zebar.de
 Port 622
+Compression yes
 
 
 # Beuth hochschulrechner
 Host *.beuth-hochschule.de
 User s36321
+Compression yes
 
 Host compute
 HostName compute.beuth-hochschule.de
 User s36321
+Compression yes
 
 
