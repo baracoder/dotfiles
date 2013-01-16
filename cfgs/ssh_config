@@ -1,7 +1,7 @@
 ForwardX11 yes
 ForwardAgent yes
 # timeout beim verbinden
-ConnectTimeout 10
+#ConnectTimeout 10
 # keepalive pakete alle 30 sek
 TCPKeepAlive yes
 ServerAliveInterval 30
@@ -32,9 +32,11 @@ Port 322
 Host zebar.de
 User root
 Compression yes
+ForwardAgent yes
 
 Host armitage
 HostName armitage.zebar.de
+RemoteForward 2020 localhost:22
 Port 622
 Compression yes
 
@@ -48,5 +50,6 @@ Host compute
 HostName compute.beuth-hochschule.de
 User s36321
 Compression yes
+ForwardAgent yes
 
 
