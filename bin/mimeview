@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# use to extract message and attachmets from stdin piped mail
+# see http://zebar.de/bara/snippets/index.html
+
+while true; do
+    TEMPDIR=/tmp/mimeview-$RANDOM
+    [ -e $TEMPDIR ] || break
+done
+ripmime -i - -d $TEMPDIR
+find $TEMPDIR -maxdepth 1 -type f -empty -print0|xargs -0 rm
+xdg-open $TEMPDIR
