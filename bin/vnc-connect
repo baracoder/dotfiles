@@ -6,16 +6,12 @@
 TARGET="$1"
 shift
 
-NR="$1"
-[ "$1" = "" ] && NR=0
-shift
 
-sleep 10 &&\
-        vncviewer -encodings Tight localhost:$NR &
+vncviewer -encodings Tight -listen 0 &
+P=$!
 
 SSHOPTS=$*
-ssh $SSHOPTS -f -L 590$NR:localhost:5900 $TARGET \
-        'x11vnc -localhost -nopw -once -display :0' 
+ssh $SSHOPTS -R 5500:localhost:5500 $TARGET \
+        'x11vnc -ncache 10 -nopw -once -display :0 -connect_or_exit localhost'
 
-
-wait
+kill $!
