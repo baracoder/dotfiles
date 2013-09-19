@@ -3,7 +3,7 @@ all: vim configs
 configs:
 	./relink
 
-vim: vim-pathogen vim-ctrlp vim-Align vim-tagbar vim-syntastic
+vim: vim-pathogen vim-ctrlp vim-Align vim-tagbar vim-syntastic vim-gpg
 
 vim-pathogen: ~/.vim/autoload/pathogen.vim
 ~/.vim/autoload/pathogen.vim:
@@ -30,5 +30,10 @@ vim-tagbar: ~/.vim/bundle/tagbar
 vim-syntastic: ~/.vim/bundle/syntastic
 ~/.vim/bundle/syntastic:
 	git clone https://github.com/scrooloose/syntastic.git $@
+	cd $@ && vim -c "helptags doc/" -c q
+
+vim-gpg: ~/.vim/bundle/vim-gnupg
+~/.vim/bundle/vim-gnupg:
+	git clone https://github.com/jamessan/vim-gnupg.git $@
 	cd $@ && vim -c "helptags doc/" -c q
 
