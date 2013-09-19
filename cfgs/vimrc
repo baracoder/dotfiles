@@ -1,57 +1,56 @@
 " enable pathogen
 call pathogen#infect()
 
-" Anzeige
+" Display
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme koehler                         " Farbwahl
+colorscheme koehler                         " nicer colors
 set list listchars=tab:»·,trail:·,extends:#
-                                            " Tabs, Leerzeichen am Ende von
-                                            " Zeilen und anzeigen
-set title                                   " Terminal-Titel anpassen
-set visualbell                              " Blinken statt Beep
-syntax on                                   " Syntax Highliting
+                                            " higlight extra whitespaces
+set title                                   " change terminal title
+set visualbell                              " blink on errors
+syntax on                                   " enable syntax highlighting
 set suffixes+=.info,.aux,.log,.dvi,.bbl,.out,.o,.lo,.pyc
-                                            " bei Autovervollständigung abwerten
-set so=5                                    " 5 Zeilen Abstand zwischen Cursor
-                                            " und Rand
+                                            " ignore on auto completion
+set so=5                                    " lines of context while scrolling
 set ruler                                   " Show cursor position all the time
-set foldmethod=syntax                       " Blöcke Falten nach syntax
-autocmd BufEnter * setlocal cursorline      " Zeile mit Cursor unterstreichen
+set foldmethod=syntax                       " fold blocks using syntax
+autocmd BufEnter * setlocal cursorline      " underline current line
 
-" Suche
+" Search
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set hlsearch                                " Suchergebnisse vorheben
-set is                                      " beim Eingeben suchen
+set hlsearch                                " highlight search results
+set is                                      " search while typing
 set smartcase                               " smartcase for searching
 
-" Fehler unterstreichen
+" underline misspelled words
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi clear SpellBad
 hi SpellBad cterm=underline,bold ctermfg=red
 
-" Eigene Kürzel
+" mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader=","                           " set lead for custom bindings
-" ,ev -> vimrc öffnen
+" ,ev -> open vimrc
 nmap <silent> <leader>ev :e ~/.vimrc<CR>
-set pastetoggle=<F2>                        " Einfügen Modus
-" ; an stelle von : für commandos
+" while inserting toggle paste mode
+set pastetoggle=<F2>
+" ; also changes to command mode
 nnoremap ; :
-" Q für textformatierung
+" Q formats [selected] text
 vmap Q gq
 nmap Q gqap
 " go over warped lines
 nnoremap j gj
 nnoremap k gk
-" easier window nav
+" easier window navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
-" Suchergebnisse ausblenden
+" hide search results
 nmap <silent> <leader>/ :nohlsearch<CR>
 
-" Eingaben
+" inputs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set bs=2                                    " Allow backspacing over everything
                                             " in insert mode
@@ -59,7 +58,7 @@ set ai                                      " Always set auto-indenting on
 set softtabstop=4 shiftwidth=4 expandtab    " Each indentation level is four
                                             " spaces. Tabs are not used.
 
-" Anderes
+" misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible                            " Use Vim defaults (much better!)
 set textwidth=72                            " standardzeilenlänge
@@ -70,7 +69,7 @@ if filereadable("/etc/vim/vimrc.local")     " lokale vimrc falls vorhandne laden
   source /etc/vim/vimrc.local
 endif
 
-" Pfadabhängige Einstellungen
+" path dependent settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd BufNewFile,BufRead ~/src/infoini/templates/* se tw=0 nowrap
-                                                " Zeilen nicht umbrechen
+
