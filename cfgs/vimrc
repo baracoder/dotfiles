@@ -49,6 +49,10 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 " hide search results
 nmap <silent> <leader>/ :nohlsearch<CR>
+" open mixed search
+nnoremap <leader>. :CtrlPTag<CR>
+" toggle tagbar
+nnoremap <silent> <leader>b :TagbarToggle<CR>
 
 " inputs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
