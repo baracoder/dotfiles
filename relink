@@ -11,7 +11,6 @@ mklink() {
 
 #       source              target
 mklink  cfgs/vimrc           .vimrc
-mklink  cfgs/vim             .vim
 mklink  cfgs/zshrc           .zshrc
 mklink  cfgs/Xmodmap         .Xmodmap
 mklink  cfgs/ssh_config      .ssh/config

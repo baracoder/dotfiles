@@ -1,3 +1,6 @@
+" enable pathogen
+call pathogen#infect()
+
 " Anzeige
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme koehler                         " Farbwahl
