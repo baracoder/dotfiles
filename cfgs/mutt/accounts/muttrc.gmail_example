@@ -1,0 +1,8 @@
+set from      = "$realname <name@googlemail.com>"
+set sendmail  = "/usr/bin/msmtp -a gmail "
+set record    = ""
+set postponed = "=gmail/drafts"
+set spoolfile = "=gmail/INBOX"
+set mbox      = "=gmail/all_mail"
+macro index,pager S "<save-message>=gmail/spam<enter>" "mark message as spam"
+

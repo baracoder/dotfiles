@@ -1,0 +1,12 @@
+
+# Sidebar
+set sidebar_width = 20                  # sidebar width
+set sidebar_visible = yes               # is sidebar visible default?
+set sidebar_delim = '|'                 # char to print as border
+bind index,pager B bounce-message       # rebind bounce to B
+bind index,pager \CP sidebar-prev
+bind index,pager \CN sidebar-next
+bind index,pager \CO sidebar-open
+macro index,pager b '<enter-command>toggle sidebar_visible<enter>'
+
+color sidebar_new brightyellow black       # New

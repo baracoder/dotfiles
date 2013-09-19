@@ -1,0 +1,102 @@
+###############################################################################
+# my computer
+set charset="utf-8//TRANSLIT"           # charset for displaying
+set net_inc=5                           # Display download progress every 5K
+
+###############################################################################
+# imap ssettings
+# set timeout=60
+# set mail_check=5
+set imap_check_subscribed               # check subscribed boxes
+set imap_list_subscribed                # list subscribed boxes
+unset imap_passive                      # open new connections to check for mail
+unset imap_servernoise                  # display imap erros as warnings
+
+###############################################################################
+# beep
+set beep_new                            # beep on new msg
+set beep=yes                            # beep on error
+
+###############################################################################
+# prompts
+set move=no                             # do not ask Yes/no moving
+set delete=yes                          # delete without prompting
+set fast_reply=yes                      # no prompting on reply
+set confirmappend=no                    # no prompt for save
+set postpone=ask-no                     # Ask about postponing
+set print=ask-yes                       # Ask before printing.
+
+
+###############################################################################
+# format lines
+set status_format=" %r %b %f %n      Del %d      Msgs %m %l %> (%P)"
+set pager_format="%-10.10i %[!%a %b %d %R]"
+set date_format="!%H:%M %a %d %b     "
+#set index_format="%4C %Z %[%b%d] %-15.15F %s"
+set folder_format="%2C %t %8s %d %N %f"
+
+
+###############################################################################
+# pager
+set markers=no                          # no + on wrapped lines
+set smart_wrap=yes                      # warp on spaces
+set menu_scroll                         # pager scrollt zeile für zeile
+set pager_index_lines=6                 # show a mini-index in pager
+set pager_context=3                     # show lines from prevous page on pgup/down
+set rfc2047_parameters                  # decode wild mime parameters attachments
+set tilde                               # vim like blank lines as tilde ~
+
+###############################################################################
+# index
+set auto_tag = yes                      # apply functions to all taged mails
+set sort=threads                        # sort by message threads in index
+set sort_aux=last-date-received         # sort by date when sorting by thread
+set nomark_old                          # Don't mark unread new msgs as old.
+
+###############################################################################
+# write msg/reply
+set include=yes                         # quote msg in reply
+                                        # vim as editor with spellcheck
+set editor="/usr/bin/vim -c 'set fileencoding=utf-8' -c 'set spell' -c 'set spl=de'"
+set use_from                            # generate the `From:' header field
+set copy                                # Keep copies of outgoing mail...
+set sendmail_wait=-1                    # Don't wait around for sendmail.
+
+###############################################################################
+# verschlüsselung
+set crypt_use_gpgme                     # use gpgme for pgp and smime
+set pgp_verify_sig=yes                  # verify signatyre on open
+set pgp_timeout=3600                    # server timeout
+set pgp_replysign                       # reply signed messages
+set pgp_replyencrypt                    # reply encrypted messages
+
+
+###############################################################################
+# fixing display
+                                        # remove AW
+set reply_regexp="^((re(\\^[0-9])? ?:|a(nt)?w(ort)?:|\\(fwd\\))[ \t]+)*"
+                                        # ignoring &reparing TOFU
+set display_filter="t-prot -cemt -M=mutt"
+
+# html is pfui
+alternative_order text/enriched text/plain text/html
+
+
+
+###############################################################################
+# Other files
+
+set header_cache=~/.cache/mutt/headers
+set message_cachedir=~/.cache/mutt/bodies
+set certificate_file=~/.mutt/certificates
+set alias_file=~/.mutt/muttrc.alias
+
+# source configs
+source ~/.mutt/muttrc.alias
+source ~/.mutt/muttrc.colors
+source ~/.mutt/muttrc.headers
+source ~/.mutt/muttrc.message-hooks
+source ~/.mutt/muttrc.bindings
+source ~/.mutt/muttrc.sidebar
+source ~/.mutt/muttrc.accounts
+

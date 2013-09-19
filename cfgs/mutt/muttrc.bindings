@@ -1,0 +1,16 @@
+
+bind pager  "x"         noop
+bind pager  "\ex"       exit
+bind pager  "h"         display-toggle-weed
+bind pager  "{"         previous-thread
+bind pager  "}"         next-thread
+
+
+# Mu
+# first macro does the search according to user query, second macro jumps to result list
+macro index <F8> "<shell-escape>mu-find " "mu-find"
+macro index <F9> "<change-folder-readonly>~/.mu/results\n" "display mu-find results"
+
+
+macro index X "<pipe-message>ssh -p 2020 localhost '. ~/.profile;DISPLAY=:0 nohup mimeview > /dev/null 2>&1'<return>"
+

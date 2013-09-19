@@ -1,0 +1,22 @@
+###############################################################################
+# gmail
+macro index \e1 "c =gmail/INBOX\n<End>"
+folder-hook gmail source ~/.mutt/accounts/muttrc.gmail
+
+mailboxes =gmail/INBOX
+mailboxes =gmail/darktable
+mailboxes =gmail/cam
+mailboxes =gmail/lugo
+
+
+###############################################################################
+# ...
+
+
+
+
+###############################################################################
+# maildir
+set folder      = ~/Mail
+# default folder
+set spoolfile   = "=gmail/INBOX"
