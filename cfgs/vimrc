@@ -21,6 +21,11 @@ set hlsearch                                " Suchergebnisse vorheben
 set is                                      " beim Eingeben suchen
 set smartcase                               " smartcase for searching
 
+" Fehler unterstreichen
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+hi clear SpellBad
+hi SpellBad cterm=underline,bold ctermfg=red
+
 " Eigene Kürzel
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader=","                           " set lead for custom bindings
