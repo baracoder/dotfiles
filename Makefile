@@ -15,12 +15,15 @@ vim-pathogen: ~/.vim/autoload/pathogen.vim
 vim-ctrlp: vim-pathogen ~/.vim/bundle/ctrlp.vim
 ~/.vim/bundle/ctrlp.vim:
 	git clone https://github.com/kien/ctrlp.vim.git $@
+	cd $@ && vim -c "helptags doc/" -c q
 
 vim-Align: ~/.vim/bundle/Align
 ~/.vim/bundle/Align:
 	git clone https://github.com/vim-scripts/Align.git $@
+	cd $@ && vim -c "helptags doc/" -c q
 
 vim-tagbar: ~/.vim/bundle/tagbar
 ~/.vim/bundle/tagbar:
 	git clone https://github.com/majutsushi/tagbar.git $@
+	cd $@ && vim -c "helptags doc/" -c q
 
