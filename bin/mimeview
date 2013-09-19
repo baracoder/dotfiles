@@ -9,4 +9,4 @@ while true; do
 done
 ripmime -i - -d $TEMPDIR
 find $TEMPDIR -maxdepth 1 -type f -empty -print0|xargs -0 rm
-xdg-open $TEMPDIR
+pcmanfm -n $TEMPDIR
