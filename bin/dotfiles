@@ -8,7 +8,9 @@ update() {
 }
 
 sync() {
-    git pull
+    git fetch
+    git rebase origin/maaster
+    git push
     make
 }
 
