@@ -1,0 +1,19 @@
+#!/bin/bash
+
+update() {
+    git diff --quiet && echo 'no changes detected' && return
+    echo 'changes detected'
+    git add -u .
+    git commit -v && git push
+}
+
+sync() {
+    git pull
+    make
+}
+
+cd ~/.dotfiles || exit 1
+[ "$1" = "-h"     ] && echo 'usage: dotfiles [update|sync ] ' && exit
+[ "$1" = "update" ] && update && exit
+[ "$1" = "sync"   ] && sync && exit
+update && sync

@@ -1,7 +1,9 @@
-all: vim configs
+all: vim configs programs
 
 configs:
 	./relink
+
+programs: opt/bitpocket opt/gc2latex
 
 vim: vim-pathogen vim-ctrlp vim-Align vim-tagbar vim-syntastic vim-gpg
 
@@ -37,3 +39,15 @@ vim-gpg: ~/.vim/bundle/vim-gnupg
 	git clone https://github.com/jamessan/vim-gnupg.git $@
 	cd $@ && vim -c "helptags doc/" -c q
 
+
+
+opt/bitpocket:
+	git clone https://github.com/sickill/bitpocket.git $@
+	mkdir -p opt/bin
+	ln -s `pwd`/$@/bin/bitpocket opt/bin/bitpocket
+
+
+opt/gc2latex:
+	git clone https://github.com/wertarbyte/gc2latex.git $@
+	mkdir -p opt/bin
+	ln -s `pwd`/$@/bin/gc2latex opt/bin/gc2latex

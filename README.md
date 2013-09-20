@@ -7,11 +7,16 @@ systems. Feel free to use it as your own template, reuse and adapt.
 
 How to use
 ----------
+Clone repo to ~/.dotfiles
+
+    git clone https://github.com/wertarbyte/gc2latex.git ~/.dotfiles
 
 Configuration files in cfgs/ have the same structure as in $HOME but
 without the leading dot. If you run make, they will get symlinked.
 
 You can add additional commands to the make file.
+
+Run dotfiles to update configs and sync
 
 
 How to bin
