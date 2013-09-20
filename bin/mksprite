@@ -1,0 +1,36 @@
+#!/bin/bash
+
+usage() {
+    cat << EOF
+mksprite combines multiple images into one sprite and prints CSS
+background positions.
+
+For best quality the images should have the same format.
+
+Usage: mksprite IMG [IMG].. SPRITE
+
+    IMG     path of input image
+    SPRITE  name of generated sprite
+
+EOF
+}
+
+[ $# -lt 2 ] && usage && exit 1
+
+IMG=""
+POS=0
+
+while [ $# -gt 1 ]; do
+    HEIGHT=`identify -format '%h' $1`
+    FFNAME=`expr "$1                                      "\
+                : "\(...................................\)"`
+    echo "$FFNAME background-position: 0 ${POS}px;"
+    POS=`expr $POS - $HEIGHT`
+
+    IMG="$IMG $1"
+    shift
+done
+
+echo "---------------------------------"
+
+convert -background none -append $IMG $1 && echo 'done'

@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# too for focus stacking photos 
+# see http://foto.schwedenstuhl.de/?page=stacking
+# and
+# http://blog.patdavid.net/2013/01/focus-stacking-macro-photos-enfuse.html
+# and
+# http://photoblog.edu-perez.com/2009/01/greater-depth-field-macro.html
+
+echo "aligning..."
+align_image_stack -m -a ais_ *.JPG || exit 1
+
+echo "combining..."
+enfuse -o result.tif --exposure-weight=0 --saturation-weight=0\
+    --contrast-weight=1 --hard-mask ais*.tif || exit 1
+
+echo "convertig to jpg..."
+convert result.tif result.jpg || exit 1
+
+echo "done"

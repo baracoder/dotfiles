@@ -1,0 +1,45 @@
+#!/bin/bash
+
+usage() {
+    cat << EOF
+mencode_timelapse uses mencoder to create a timelapse video of jpg files
+
+Usage: mencode_timelapse [-f N] SOURCE [OUT]
+       mencode_timelapse -h
+
+    SOURCE      Source directory which  contains the jpg files to process
+    OUT         will be the the video file, default is the sourceDir name
+                (basename)
+
+    Options:
+
+        -h      dispay this help
+        -f N    set frames/second to N, default 20
+
+EOF
+}
+
+
+# parse options
+FPS=20
+
+[ $# -lt 2 ] && usage && exit 1
+[ $1 = '-f' -a $2 -gt 0 ] && FPS=$2 && shift 2
+SOURCE=$1
+OUT=$PWD/`basename $1`
+[ $# -eq 2 ] && OUT=$2
+
+
+
+cd SOURCE || exit 1
+
+# do two pass encoding
+for i in `seq 2`; do
+    nice mencoder "mf://*.jpg" -mf fps=$FPS -o $OUT -ovc xvid\
+        -xvidencopts bitrate=16000:pass=$i -vf scale=-2:1080
+done
+
+rm divx2pass.log
+
+echo 'done!'
+beep

@@ -1,0 +1,2 @@
+#!/bin/bash
+scanimage --resolution 300 |convert - $1.jpg

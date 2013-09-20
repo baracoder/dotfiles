@@ -1,0 +1,10 @@
+#!/bin/bash
+
+mkdir -p /tmp/invoice-$1
+cd /tmp/invoice-$1 || exit 1
+
+python2 ~/.dotfiles/opt/gcinvoice/gcinvoice.py -g ~/doc/gnucash/geld.gnucash \
+    -t ~/.invoice_template.tex $1 > invoice_$1.tex || exit 1
+pdflatex invoice_$1.tex || exit 1
+xdg-open invoice_$1.pdf || exit 1
+
