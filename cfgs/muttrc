@@ -19,7 +19,7 @@ set beep=yes                            # beep on error
 
 ###############################################################################
 # prompts
-set move=no                             # do not ask Yes/no moving
+set move=yes                            # move read mail to archive
 set delete=yes                          # delete without prompting
 set fast_reply=yes                      # no prompting on reply
 set confirmappend=no                    # no prompt for save
