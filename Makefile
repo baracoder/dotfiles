@@ -3,7 +3,7 @@ all: vim configs programs
 configs:
 	./relink
 
-programs: opt/bitpocket opt/gcinvoice
+programs: opt/bitpocket opt/gcinvoice opt/autojump
 
 vim: vim-pathogen vim-ctrlp vim-Align vim-tagbar vim-syntastic vim-gpg
 
@@ -51,4 +51,9 @@ opt/gcinvoice:
 	mkdir $@
 	curl -Ss http://www.smoerz.org/gcinvoice/gcinvoice-0.1.5.tar.gz |\
 		tar -xvz --strip-components=1 -C $@
+
+
+opt/autojump:
+	git clone git://github.com/joelthelion/autojump.git $@
+	cd $@ && ./install.sh --local
 

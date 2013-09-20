@@ -4,6 +4,8 @@ source ~/.profile
 # emacs key bindings
 bindkey -e
 
+# enable autojump
+[[ -s ~/.autojump/etc/profile.d/autojump.zsh ]] && . ~/.autojump/etc/profile.d/autojump.zsh
 
 # aliase
 alias ls='ls --color=auto -p'
