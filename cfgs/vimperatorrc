@@ -1,0 +1,12 @@
+# goto last tab
+map <C-Tab> <C-^>
+
+# bookmarks
+map s <ESC>:sb Bookmarks<CR>
+map S <ESC>:sbcl<CR>
+
+imap <C-[> <Esc>
+imap <C-c> <Esc>
+set hlsearch
+set defsearch=g
+
