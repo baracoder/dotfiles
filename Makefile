@@ -3,7 +3,7 @@ all: vim configs programs
 configs:
 	./relink
 
-programs: opt/bitpocket opt/gc2latex
+programs: opt/bitpocket opt/gcinvoice
 
 vim: vim-pathogen vim-ctrlp vim-Align vim-tagbar vim-syntastic vim-gpg
 
@@ -47,7 +47,8 @@ opt/bitpocket:
 	ln -s `pwd`/$@/bin/bitpocket opt/bin/bitpocket
 
 
-opt/gc2latex:
-	git clone https://github.com/wertarbyte/gc2latex.git $@
-	mkdir -p opt/bin
-	ln -s `pwd`/$@/bin/gc2latex opt/bin/gc2latex
+opt/gcinvoice:
+	mkdir $@
+	curl -Ss http://www.smoerz.org/gcinvoice/gcinvoice-0.1.5.tar.gz |\
+		tar -xvz --strip-components=1 -C $@
+
