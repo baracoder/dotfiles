@@ -1,3 +1,5 @@
+set nocompatible                            " Use Vim defaults (much better!)
+
 " enable pathogen
 call pathogen#infect()
 
@@ -19,8 +21,9 @@ autocmd BufEnter * setlocal cursorline      " underline current line
 " Search
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set hlsearch                                " highlight search results
-set is                                      " search while typing
-set smartcase                               " smartcase for searching
+set incsearch                               " search while typing
+set ignorecase                              " 
+set smartcase                               " override ic if uppercase letters
 
 " underline misspelled words
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -69,7 +72,6 @@ set mouse=a                                 " enable mouse support
 
 " misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible                            " Use Vim defaults (much better!)
 set textwidth=72                            " standardzeilenlänge
 set viminfo='20,\"500                       " Keep a .viminfo file.
 set history=50                              " keep 50 lines of command history
