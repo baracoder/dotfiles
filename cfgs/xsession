@@ -1,0 +1,35 @@
+#!/bin/sh
+source /etc/profile
+source ~/.profile
+
+# start programms in background
+numlockx &
+pulseaudio -D &
+trayion &
+synergys &
+xkbevd -bg &
+setxkbmap us
+xmodmap ~/.Xmodmap &
+roxterm &
+autocutsel &
+xset r rate 280 30 &
+xset b 100 &
+#xset m 3 1
+#xset -b
+#skype &
+
+# start compositor
+#xcompmgr -cCfF -r7 -o.65 -l-10 -t-8 -D7 &
+
+# set a wallpaper
+feh --bg-fill --no-xinerama ~/.wallpapers/gentoo_1920x1200.jpg &
+
+# linclude local
+[ -f ~/.xsession.local ] && source ~/.xsession.local
+
+# exec window manger
+#exec /homoe/bara/usr/bin/ion3 
+#exec awesome
+#exec /usr/bin/wmii
+exec notion
+
