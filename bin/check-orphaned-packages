@@ -1,0 +1,28 @@
+#!/usr/bin/python
+from bs4 import BeautifulSoup
+import portage
+import urllib2
+
+url = 'http://www.gentoo.org/proj/en/qa/treecleaners/maintainer-needed.xml'
+
+# Build a to remove set
+f = urllib2.urlopen(url)
+soup = BeautifulSoup(f.read())
+table = soup.find('table', {'class': 'ntable'})
+toremove = set(row.findChild('a').text for row in table.findChildren('tr')[1:])
+f.close()
+
+# Build an installed set
+vartree = portage.db[portage.root]['vartree']
+installed = set(vartree.dbapi.cp_all())
+
+# Print installed, but to be removed
+packages = sorted(toremove.intersection(installed))
+if packages:
+    print "The following %d installed package(s) need a maintainer" % len(packages)
+    for package in packages:
+        print "-", package
+    exit(1)
+else:
+    print "All installed packages have a maintainer :)"
+    exit(0)
