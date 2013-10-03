@@ -31,6 +31,19 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'          # begin standout-mode - info box
 export LESS_TERMCAP_ue=$'\E[0m'                 # end underline
 export LESS_TERMCAP_us=$'\E[01;32m'             # begin underline
 
+#------------------------------------------////
+#       SSH-Agent
+#------------------------------------------////
+SSHAGENT=`which ssh-agent`
+SSHAGENTARGS="-s"
+if [ -z "$SSH_AUTH_SOCK" -a -x "$SSHAGENT" ]; then
+    eval `$SSHAGENT $SSHAGENTARGS`
+    trap "kill $SSH_AGENT_PID" 0
+fi
+
+#------------------------------------------////
+#       Includes
+#------------------------------------------////
 
 [ -f ~/.dotfiles/profile ] && source ~/.dotfiles/profile
 [ -f ~/.profile.local ] && source ~/.profile.local
