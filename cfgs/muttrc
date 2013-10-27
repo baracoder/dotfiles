@@ -69,6 +69,7 @@ set pgp_verify_sig=yes                  # verify signatyre on open
 set pgp_timeout=3600                    # server timeout
 set pgp_replysign                       # reply signed messages
 set pgp_replyencrypt                    # reply encrypted messages
+set pgp_auto_decode                     # decode pgp messages
 
 
 ###############################################################################
