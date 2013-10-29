@@ -8,6 +8,7 @@
 
 [merge]                                 # tool für "git mergetool" festlegen
     tool = meld
+    summary = true
 
 [diff]                                  # tool für "git difftool" festlegen
     tool = meld
@@ -55,3 +56,6 @@
 	merge = refs/heads/master
 [push]
 	default = matching
+
+[include]
+    path = ~/.gitconfig.local
