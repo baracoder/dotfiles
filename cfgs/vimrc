@@ -67,7 +67,7 @@ set bs=2                                    " Allow backspacing over everything
                                             " in insert mode
 set ai                                      " Always set auto-indenting on
 set softtabstop=4 shiftwidth=4 expandtab    " Each indentation level is four
-                                            " spaces. Tabs are not used.
+set tabstop=4                               " spaces. Tabs are not used.
 set mouse=a                                 " enable mouse support
 
 " misc
