@@ -84,4 +84,8 @@ endif
 " path dependent settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd BufNewFile,BufRead ~/src/infoini/templates/* se tw=0 nowrap
+autocmd BufNewFile,BufRead ~/src/springlobby/src/* se noexpandtab
 
+" file type dependant settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd   FileType html set softtabstop=2 shiftwidth=2 tw=0
