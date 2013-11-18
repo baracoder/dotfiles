@@ -10,6 +10,7 @@ bindkey -e
 # aliase
 alias ls='ls --color=auto -p'
 alias grep='grep --color=auto'
+alias cgrep='grep -r --include=\*.{cpp,h}'
 alias g=git
 alias lmap="nmap 192.168.0.0/24"
 alias open="xdg-open"
