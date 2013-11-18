@@ -37,7 +37,7 @@
     vis = !gitk --all &                 # Visualisierungen:
     tig = !tig --all                    # "git-gui", "gitk und "tig" müssen
     num = shortlog -s -n                # vielleicht nachinstalliert werden
-    g   = gui
+    g   = !git gui &
     lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
 
     # readonly server zum verteilen im lokalen netz
