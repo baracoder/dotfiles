@@ -3,6 +3,11 @@ set nocompatible                            " Use Vim defaults (much better!)
 " enable pathogen
 call pathogen#infect()
 
+" auto completion
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " ignore files on autocompletion
+set wildignore+=*/build/*
+
 " Display
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme koehler                         " nicer colors
