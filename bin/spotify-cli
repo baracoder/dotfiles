@@ -1,0 +1,27 @@
+#!/bin/bash
+
+WINDOW="$(xdotool search --name "Spotify (Premium)? - Linux Preview"|head -n1)"
+
+send_key(){
+    xdotool key --window $WINDOW $1
+}
+
+case $1 in
+   "play")
+       send_key XF86AudioPlay
+       ;;
+   "next")
+       send_key XF86AudioNext
+       ;;
+   "prev")
+       send_key XF86AudioPrev
+       ;;
+    "show")
+        xdotool windowfocus $WINDOW
+        ;;
+   *)
+       echo "Usage: $0 play|next|prev"
+       exit 1
+        ;;
+esac
+exit 0
