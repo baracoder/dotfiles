@@ -41,8 +41,8 @@ vim-gpg: ~/.vim/bundle/vim-gnupg
 
 
 opt/pulseaudio-ctl:
-	git clone https://github.com/graysky2/pulseaudio-ctl.git
-	chmod +x opt/bin/pulseaudio-ctl $@
+	git clone https://github.com/graysky2/pulseaudio-ctl.git $@
+	chmod +x $@/pulseaudio-ctl
 	mkdir -p opt/bin
 	ln -s `pwd`/$@/pulseaudio-ctl opt/bin/pulseaudio-ctl
 
