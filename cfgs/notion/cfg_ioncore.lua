@@ -96,7 +96,7 @@ defbindings("WScreen", {
    kpress(META.."Prior", "ioncore.exec_on(_, 'spotify-cli show')"),
    
    bdoc("File Explorer"),
-   kpress(META.."E", "ioncore.exec_on(_, 'nautilus ~')"),
+   kpress(META.."E", "ioncore.exec_on(_, 'pcmanfm -n ~')"),
 
    --bdoc("Seek forward"),
    --kpress(META.."Right", "ioncore.exec_on(_, 'mpc seek +0:0:30')"),
