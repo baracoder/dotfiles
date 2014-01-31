@@ -68,7 +68,7 @@ defbindings("WScreen", {
     kpress(ALTMETA.."F12", "mod_query.query_menu(_, _sub, 'mainmenu', 'Main menu:')"),
     --kpress(ALTMETA.."F12", "mod_menu.menu(_, _sub, 'mainmenu', {big=true})"),
     --kpress(ALTMETA.."F11", "mod_query.query(_, _sub, 'mainmenu', 'Test:')"),
-    kpress(META.."F11", "ioncore.exec_on(_, 'xflock4; sleep 2;xset dpms force off')"),
+    kpress(META.."F11", "ioncore.exec_on(_, 'xflock4 & sleep 1 && xset dpms force off')"),
     mpress("Button3", "mod_menu.pmenu(_, _sub, 'mainmenu')"),
     
     bdoc("Display the window list menu."),
