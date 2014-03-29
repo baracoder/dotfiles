@@ -14,6 +14,12 @@ defwinprop{
 }
 
 defwinprop{
+  class="org-fenix-llanfair-Llanfair",
+  float=true,
+}
+
+
+defwinprop{
   class="spring",
   float=true,
 }
