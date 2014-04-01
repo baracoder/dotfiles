@@ -44,9 +44,6 @@ nmap <silent> <leader>ev :e ~/.vimrc<CR>
 set pastetoggle=<F2>
 " ; also changes to command mode
 nnoremap ; :
-" Q formats [selected] text
-vmap Q gq
-nmap Q gqap
 " go over warped lines
 nnoremap j gj
 nnoremap k gk
