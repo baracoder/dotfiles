@@ -7,6 +7,7 @@ call pathogen#infect()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " ignore files on autocompletion
 set wildignore+=*/build/*
+set wildignore+=*/node_modules/*
 
 " Display
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
