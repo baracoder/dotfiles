@@ -83,6 +83,7 @@ set autowrite                               " Datei bei :next usw speichern
 if filereadable("/etc/vim/vimrc.local")     " lokale vimrc falls vorhandne laden
   source /etc/vim/vimrc.local
 endif
+set directory=~/.cache,/var/tmp,/tmp
 
 " path dependent settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
