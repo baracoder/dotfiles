@@ -1,0 +1,4 @@
+soundDirectory  = ""
+soundCmd    = "aplay -q"
+
+Bell()          "/usr/share/sounds/generic.wav"

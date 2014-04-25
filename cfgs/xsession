@@ -13,6 +13,9 @@ xmodmap ~/.Xmodmap &
 roxterm &
 xset r rate 280 30 &
 xset b 100 &
+
+xkbevd -bg &
+
 #xset m 3 1
 #xset -b
 #skype &
