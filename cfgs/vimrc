@@ -93,3 +93,9 @@ autocmd BufNewFile,BufRead ~/src/springlobby/src/* setl noexpandtab
 " file type dependant settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType html setl softtabstop=2 shiftwidth=2 tw=0
+
+" shortcuts
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" format json
+map <Leader>j :%!python -m json.tool<CR>
+
