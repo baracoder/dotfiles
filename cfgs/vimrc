@@ -99,3 +99,8 @@ autocmd FileType html setl softtabstop=2 shiftwidth=2 tw=0
 " format json
 map <Leader>j :%!python -m json.tool<CR>
 
+" create directory on write
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if has("autocmd")
+  autocmd BufWritePre * :silent !mkdir -p %:p:h
+end
