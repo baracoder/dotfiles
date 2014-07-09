@@ -22,7 +22,8 @@ set suffixes+=.info,.aux,.log,.dvi,.bbl,.out,.o,.lo,.pyc
 set so=5                                    " lines of context while scrolling
 set ruler                                   " Show cursor position all the time
 set foldmethod=syntax                       " fold blocks using syntax
-autocmd BufEnter * setlocal cursorline      " underline current line
+set cursorline                              " underline line with cursor
+highlight CursorLine   cterm=underline gui=underline guibg=NONE
 
 " Search
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
