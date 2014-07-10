@@ -51,11 +51,8 @@
     psh = push
 
 # weitere git-tipps: http://gitready.com/
-[branch "master"]
-	remote = origin
-	merge = refs/heads/master
 [push]
-	default = matching
+	default = simple
 
 [include]
     path = ~/.gitconfig.local
