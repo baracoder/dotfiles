@@ -10,3 +10,4 @@ imap <C-c> <Esc>
 set hlsearch
 set defsearch=g
 
+set gui=noaddons,nobookmarks,nomenu,nonavigation,tabs
