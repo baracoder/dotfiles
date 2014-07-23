@@ -9,7 +9,7 @@ update() {
 
 sync() {
     git fetch
-    git rebase origin/maaster
+    git rebase origin/master
     git push
     make
 }
