@@ -63,7 +63,8 @@ nnoremap <silent> <leader>b :TagbarToggle<CR>
 " next/previous syntax error
 nmap <silent> <leader>n :lnext<CR>
 nmap <silent> <leader>p :lprev<CR>
-
+" format json
+nmap <Leader>j :%!python -m json.tool<CR>
 
 " inputs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -96,10 +97,6 @@ autocmd BufNewFile,BufRead ~/src/springlobby/src/* setl noexpandtab
 autocmd FileType html setl softtabstop=2 shiftwidth=2 tw=0
 autocmd FileType rst setl spell spl=de
 
-" shortcuts
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" format json
-map <Leader>j :%!python -m json.tool<CR>
 
 " create directory on write
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
