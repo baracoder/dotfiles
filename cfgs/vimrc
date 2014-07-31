@@ -67,6 +67,9 @@ nmap <silent> <leader>p :lprev<CR>
 nmap <Leader>j :%!python -m json.tool<CR>
 " format xml
 nmap <Leader>x :%!xmllint --encode UTF-8 --format -<CR>
+" open/close errors view
+nmap <Leader>e :Errors<CR>
+nmap <Leader>E :lclose<CR>
 
 " inputs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
