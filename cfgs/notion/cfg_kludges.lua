@@ -14,6 +14,12 @@ defwinprop{
 }
 
 defwinprop{
+  class="org-fenix-llanfair-Llanfair",
+  float=true,
+}
+
+
+defwinprop{
   class="spring",
   float=true,
 }
@@ -74,55 +80,41 @@ ioncore.defshortening("[^:]+: (.*)", "$1$|$1$<...")
 ioncore.defshortening("(.*)(<[0-9]+>)", "$1$2$|$1$<...$2")
 ioncore.defshortening("(.*)", "$1$|$1$<...")
 
-
-
--- Flash player opens full-screen windows from Firefox with size
--- request 200x200.  It closes them if they lose focus, but also if
--- they get focus too quickly.  Therefore set focus 200 ms after
--- such a window is mapped (this may need to be adjusted on slower
--- computers).
-
-_NET_WM_STATE = ioncore.x_intern_atom('_NET_WM_STATE', false)
-_NET_WM_STATE_FULLSCREEN = ioncore.x_intern_atom('_NET_WM_STATE_FULLSCREEN',
-                                                 false)
-
-function is_fullscreen(cwin)
-   local state = ioncore.x_get_window_property(cwin:xid(), _NET_WM_STATE, 4,
-                                               1, true)
-   if state then
-      for k, v in pairs(state) do
-         if v == _NET_WM_STATE_FULLSCREEN then
-            return true
-         end
-      end
-   end
-   return false
-end
+-- flash player
 
 defwinprop {
-   class = "Firefox-bin",
-   match = function(prop, cwin, id)
-              local geom = cwin:geom()
-              return is_fullscreen(cwin) and geom.w == 200 and geom.h == 200
-           end,
-   switchto = false,
-   flash_fullscreen = true,
+    class = "Operapluginwrapper-ia32-linux",
+    instance = "operapluginwrapper-ia32-linux",
+    match = function(prop, cwin, id) return is_fullscreen(cwin); end,
+    switchto = false,
+    flash_fullscreen = true,
+}
+defwinprop {
+    class = "Firefox",
+    instance = "firefox",
+    name = "Firefox",
+    match = function(prop, cwin, id) return is_fullscreen(cwin); end,
+    switchto = false,
+    flash_fullscreen = true,
+}
+defwinprop {
+    class = "Prism",
+    instance = "prism",
+    match = function(prop, cwin, id) return is_fullscreen(cwin); end,
+    switchto = false,
+    flash_fullscreen = true,
+}
+defwinprop {
+    class = "Exe",  -- google chrome
+    instance = "exe",
+    name = "exe",
+    match = function(prop, cwin, id) return is_fullscreen(cwin); end,
+    switchto = false,
+    flash_fullscreen = true,
 }
 
-ioncore.get_hook('clientwin_do_manage_alt'):add(
-   function(cwin, table)
-      local winprop = ioncore.getwinprop(cwin)
-      if winprop and winprop.flash_fullscreen then
-         local timer = ioncore.create_timer()
-         timer:set(200, function() cwin:goto() end)
-         return true
-      else
-         return false
-      end
-   end
-)
 
--- randr screen changed
--- if randr_screen_change_notify_hook ~= nil then
---     randr_screen_change_notify_hook:add(screenlayoutupdated)
--- end
+ioncore.get_hook('clientwin_do_manage_alt'):add(
+    function(cwin, table)
+    ioncore.write_savefile("windowinfos", cwin:get_ident())
+end)

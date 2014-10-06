@@ -1,0 +1,61 @@
+#!/bin/bash
+
+# creates a history in RST/markdown format from
+# git tags
+
+
+getPrevTag() {
+    PREVTAG=""
+    (
+        git tag -l
+        git diff --quiet `git tag -l|tail -n 1` master || git describe --tags --dirty
+    )| while read TAG; do
+        if [ "$TAG" = "$1" ]; then
+            echo $PREVTAG
+            return 0
+        fi
+        PREVTAG=$TAG
+    done || return 1
+}
+
+printLog() {
+    echo
+    git log --pretty='* %s' --reverse $1 \
+            | fold -s -w 60 | sed -e 's/^\([^*]\)/  \1/g' -e 's/^/  /g'
+    echo
+}
+
+# check for dirty commits after last tag
+TAG=`git tag -l |tail -n 1`
+if git diff --quiet $TAG master; then
+    true
+else
+    TAG=`git describe --tags --dirty`
+fi
+
+while true; do
+    TAG_NODIRTY=`echo "$TAG" | sed 's/-dirty//g'`
+    DATE=`git show --format=%cD -s $TAG_NODIRTY | cut -d\  -f-5`
+    HEADER="$TAG - $DATE"
+    echo "$HEADER"
+    echo "$HEADER" | sed 's/./=/g'
+
+    if [ $TAG != $TAG_NODIRTY ]; then
+        (
+            echo "Modifications since last commit:"
+            echo
+            git status --porcelain | sed 's/^/* /g'
+        )| sed 's/^/  /g'
+    fi
+
+    PREVTAG=`getPrevTag $TAG`
+    if [ "$PREVTAG" = "" ]; then
+        printLog $TAG_NODIRTY
+        exit 0
+    else
+        printLog $PREVTAG..$TAG_NODIRTY
+    fi
+
+    TAG=$PREVTAG
+    NAME=""
+done

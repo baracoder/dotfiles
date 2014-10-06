@@ -3,6 +3,12 @@ set nocompatible                            " Use Vim defaults (much better!)
 " enable pathogen
 call pathogen#infect()
 
+" auto completion
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " ignore files on autocompletion
+set wildignore+=*/build/*
+set wildignore+=*/node_modules/*
+
 " Display
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme koehler                         " nicer colors
@@ -16,7 +22,8 @@ set suffixes+=.info,.aux,.log,.dvi,.bbl,.out,.o,.lo,.pyc
 set so=5                                    " lines of context while scrolling
 set ruler                                   " Show cursor position all the time
 set foldmethod=syntax                       " fold blocks using syntax
-autocmd BufEnter * setlocal cursorline      " underline current line
+set cursorline                              " underline line with cursor
+highlight CursorLine   cterm=underline gui=underline guibg=NONE
 
 " Search
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -28,7 +35,7 @@ set smartcase                               " override ic if uppercase letters
 " underline misspelled words
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 hi clear SpellBad
-hi SpellBad cterm=underline,bold ctermfg=red
+hi SpellBad cterm=underline,bold ctermfg=red gui=undercurl,bold guifg=red
 
 " mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -39,9 +46,6 @@ nmap <silent> <leader>ev :e ~/.vimrc<CR>
 set pastetoggle=<F2>
 " ; also changes to command mode
 nnoremap ; :
-" Q formats [selected] text
-vmap Q gq
-nmap Q gqap
 " go over warped lines
 nnoremap j gj
 nnoremap k gk
@@ -59,7 +63,13 @@ nnoremap <silent> <leader>b :TagbarToggle<CR>
 " next/previous syntax error
 nmap <silent> <leader>n :lnext<CR>
 nmap <silent> <leader>p :lprev<CR>
-
+" format json
+nmap <Leader>j :%!python -m json.tool<CR>
+" format xml
+nmap <Leader>x :%!xmllint --encode UTF-8 --format -<CR>
+" open/close errors view
+nmap <Leader>e :Errors<CR>
+nmap <Leader>E :lclose<CR>
 
 " inputs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -68,6 +78,7 @@ set bs=2                                    " Allow backspacing over everything
 set ai                                      " Always set auto-indenting on
 set softtabstop=4 shiftwidth=4 expandtab    " Each indentation level is four
                                             " spaces. Tabs are not used.
+set tabstop=4                               " tabs are 4 spaces
 set mouse=a                                 " enable mouse support
 
 " misc
@@ -79,8 +90,21 @@ set autowrite                               " Datei bei :next usw speichern
 if filereadable("/etc/vim/vimrc.local")     " lokale vimrc falls vorhandne laden
   source /etc/vim/vimrc.local
 endif
+set directory=~/.cache,/var/tmp,/tmp
 
 " path dependent settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd BufNewFile,BufRead ~/src/infoini/templates/* se tw=0 nowrap
+autocmd BufNewFile,BufRead ~/src/infoini/templates/* setl tw=0 nowrap
+autocmd BufNewFile,BufRead ~/src/springlobby/src/* setl noexpandtab
 
+" file type dependant settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd FileType html setl softtabstop=2 shiftwidth=2 tw=0
+autocmd FileType rst setl spell spl=de
+
+
+" create directory on write
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if has("autocmd")
+  autocmd BufWritePre * :silent !mkdir -p %:p:h
+end

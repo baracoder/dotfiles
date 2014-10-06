@@ -6,11 +6,6 @@ ForwardAgent yes
 TCPKeepAlive yes
 ServerAliveInterval 30
 
-# zuhaus
-Host hal
-HostName bara.ath.cx
-User bara
-
 # server
 Host flatline
 HostName flatline.zebar.de
