@@ -48,12 +48,12 @@ color body	brightmagenta	default	"^\\[---.*"
 color body	green			default	"^#v[-+]"
 
 # Various smilies and the like
-color body brightgreen white "<[Gg]>"                                            # <g>
-color body brightgreen white "<[Bb][Gg]>"                                        # <bg>
-color body brightgreen white " [;:]-*[)>(<|]"                                    # :-) etc...
-color body brightblue  white "(^|[[:space:]])\\*[^[:space:]]+\\*([[:space:]]|$)" # *Bold* text.
-color body brightblue  white "(^|[[:space:]])_[^[:space:]]+_([[:space:]]|$)"     # _Underlined_ text.
-color body brightblue  white "(^|[[:space:]])/[^[:space:]]+/([[:space:]]|$)"     # /Italic/ text.
+color body brightgreen default "<[Gg]>"                                            # <g>
+color body brightgreen default "<[Bb][Gg]>"                                        # <bg>
+color body brightgreen default " [;:]-*[)>(<|]"                                    # :-) etc...
+color body brightblue  default "(^|[[:space:]])\\*[^[:space:]]+\\*([[:space:]]|$)" # *Bold* text.
+color body brightblue  default "(^|[[:space:]])_[^[:space:]]+_([[:space:]]|$)"     # _Underlined_ text.
+color body brightblue  default "(^|[[:space:]])/[^[:space:]]+/([[:space:]]|$)"     # /Italic/ text.
 
 # URLs
 color body brightblue  white "(http|https|ftp|news|telnet|finger)://[^ \">\t\r\n]*"
