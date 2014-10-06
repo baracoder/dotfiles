@@ -81,6 +81,7 @@ set display_filter="t-prot -cemt -M=mutt"
 
 # deal with html
 auto_view text/html
+auto_view text/html application/pdf
 alternative_order text/plain text/enriched text/html
 
 
