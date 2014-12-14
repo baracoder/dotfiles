@@ -9,4 +9,4 @@ imap <C-[> <Esc>
 imap <C-c> <Esc>
 set hlsearch
 set defsearch=g
-
+set gui=nonavigaton
