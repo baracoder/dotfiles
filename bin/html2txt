@@ -1,0 +1,10 @@
+#!/bin/sh
+
+links -html-numbered-links 1 -html-images 1 -codepage utf-8 -dump "file://$@" 
+
+#or
+#elinks -dump "file://$@"
+#or
+#lynx -force_html -dump "$@"
+#or
+#w3m -T text/html -F -dump "$@"

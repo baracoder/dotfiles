@@ -4,7 +4,7 @@ update() {
     git diff --quiet && echo 'no changes detected' && return
     echo 'changes detected'
     git add -u .
-    git commit -v && git push
+    git commit -v
 }
 
 sync() {

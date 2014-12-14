@@ -79,8 +79,10 @@ set reply_regexp="^((re(\\^[0-9])? ?:|a(nt)?w(ort)?:|\\(fwd\\))[ \t]+)*"
                                         # ignoring &reparing TOFU
 set display_filter="t-prot -cemt -M=mutt"
 
-# html is pfui
-alternative_order text/enriched text/plain text/html
+# deal with html
+auto_view text/html
+auto_view text/html application/pdf
+alternative_order text/plain text/enriched text/html
 
 
 

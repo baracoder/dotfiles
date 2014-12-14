@@ -1,0 +1,2 @@
+text/html;          html2txt %s;        copiousoutput
+application/pdf;    pdftotext %s -;     copiousoutput

@@ -18,6 +18,7 @@ alias es="vim --servername default"
 alias e='vim --servername default --remote-silent'
 alias psgrep='ps aux|grep -i'
 alias c='python -ic "from __future__ import division; from math import *; from random import *"'
+alias htserv='python -m SimpleHTTPServer 8000'
 
 alias -g G='|grep'
 alias -g GR='|grep -iR'
