@@ -5,7 +5,7 @@ configs:
 
 programs: opt/bitpocket opt/gcinvoice opt/autojump opt/pulseaudio-ctl
 
-vim: vim-pathogen vim-ctrlp vim-Align vim-tagbar vim-syntastic vim-gpg
+vim: vim-pathogen vim-ctrlp vim-Align vim-tagbar vim-syntastic vim-gpg vim-coffee-script
 
 vim-pathogen: ~/.vim/autoload/pathogen.vim
 ~/.vim/autoload/pathogen.vim:
@@ -39,12 +39,10 @@ vim-gpg: ~/.vim/bundle/vim-gnupg
 	git clone https://github.com/jamessan/vim-gnupg.git $@
 	cd $@ && vim -c "helptags doc/" -c q
 
+vim-coffee-script: ~/.vim/bundle/vim-coffee-script
+~/.vim/bundle/vim-coffee-script:
+	git clone https://github.com/kchmck/vim-coffee-script.git $@
 
-opt/pulseaudio-ctl:
-	git clone https://github.com/graysky2/pulseaudio-ctl.git $@
-	chmod +x $@/pulseaudio-ctl
-	mkdir -p opt/bin
-	ln -s `pwd`/$@/pulseaudio-ctl opt/bin/pulseaudio-ctl
 
 
 opt/bitpocket:

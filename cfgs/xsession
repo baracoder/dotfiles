@@ -5,7 +5,7 @@ source ~/.profile
 # start programms in background
 numlockx &
 pulseaudio -D &
-trayion &
+#trayion &
 synergys &
 xkbevd -bg &
 setxkbmap us
@@ -21,7 +21,7 @@ xkbevd -bg &
 #skype &
 
 # start compositor
-#xcompmgr -cCfF -r7 -o.65 -l-10 -t-8 -D7 &
+xcompmgr -cCfF -r7 -o.65 -l-10 -t-8 -D7 &
 
 # set a wallpaper
 feh --bg-fill --no-xinerama ~/.wallpapers/gentoo_1920x1200.jpg &
@@ -31,7 +31,7 @@ feh --bg-fill --no-xinerama ~/.wallpapers/gentoo_1920x1200.jpg &
 
 # exec window manger
 #exec /homoe/bara/usr/bin/ion3 
-#exec awesome
+exec awesome
 #exec /usr/bin/wmii
-exec notion
+#exec notion
 

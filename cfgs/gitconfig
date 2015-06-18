@@ -52,7 +52,7 @@
 
 # weitere git-tipps: http://gitready.com/
 [push]
-	default = simple
+	default = current
 
 [include]
     path = ~/.gitconfig.local
