@@ -6,6 +6,7 @@ bindkey -e
 
 # enable autojump
 [[ -s ~/.autojump/etc/profile.d/autojump.zsh ]] && . ~/.autojump/etc/profile.d/autojump.zsh
+[[ -s /usr/share/autojump/autojump.zsh ]] && .  /usr/share/autojump/autojump.zsh
 
 # aliase
 alias ls='ls --color=auto -p'
