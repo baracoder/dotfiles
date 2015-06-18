@@ -8,6 +8,6 @@ map S <ESC>:sbcl<CR>
 imap <C-[> <Esc>
 imap <C-c> <Esc>
 set hlsearch
-set defsearch=g
+set defsearch=d
 
 set gui=noaddons,nobookmarks,nomenu,nonavigation,tabs
