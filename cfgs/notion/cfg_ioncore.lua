@@ -113,6 +113,9 @@ defbindings("WScreen", {
 --   kpress("AnyModifier+XF86AudioLowerVolume", "ioncore.exec_on(_, 'amixer sset Master 3%-')"),
    kpress(META.."Down", "ioncore.exec_on(_, 'pulseaudio-ctl down')"),
 
+   bdoc("Sleep"),
+   kpress("XF86Sleep", "ioncore.exec_on(_, 'pm-suspend')"),
+
 
     bdoc("Forward-circulate focus."),
     -- '_chld' used here stands to for an actual child window that may not
