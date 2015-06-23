@@ -96,13 +96,13 @@ set directory=~/.cache,/var/tmp,/tmp
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd BufNewFile,BufRead ~/src/infoini/templates/* setl tw=0 nowrap
 autocmd BufNewFile,BufRead ~/src/springlobby/src/* setl noexpandtab
+autocmd BufNewFile,BufRead *.hamlc setl ft=haml
 
 " file type dependant settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType html setl softtabstop=2 shiftwidth=2 tw=0
 autocmd FileType rst setl spell spl=de
 autocmd FileType coffee setl softtabstop=2 shiftwidth=2
-
 
 " create directory on write
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
