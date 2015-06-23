@@ -96,6 +96,9 @@ set directory=~/.cache,/var/tmp,/tmp
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd BufNewFile,BufRead ~/src/infoini/templates/* setl tw=0 nowrap
 autocmd BufNewFile,BufRead ~/src/springlobby/src/* setl noexpandtab
+autocmd BufNewFile,BufRead ~/src/kita-verwaltung/* setl softtabstop=2 shiftwidth=2 tw=0
+
+let g:syntastic_cpp_compiler_options = ' -std=c++11'
 autocmd BufNewFile,BufRead *.hamlc setl ft=haml
 
 " file type dependant settings
