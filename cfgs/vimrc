@@ -101,6 +101,7 @@ autocmd BufNewFile,BufRead ~/src/springlobby/src/* setl noexpandtab
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType html setl softtabstop=2 shiftwidth=2 tw=0
 autocmd FileType rst setl spell spl=de
+autocmd FileType coffee setl softtabstop=2 shiftwidth=2
 
 
 " create directory on write
