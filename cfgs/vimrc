@@ -108,3 +108,32 @@ autocmd FileType rst setl spell spl=de
 if has("autocmd")
   autocmd BufWritePre * :silent !mkdir -p %:p:h
 end
+
+let g:syntastic_html_tidy_blocklevel_tags = [
+\ 'md-toolbar',
+\ 'md-sidenav',
+\ 'md-content',
+\ 'md-icon',
+\ 'md-subheader',
+\ 'md-divider',
+\ 'md-input-container',
+\ 'md-radio-group',
+\ 'md-radio-button',
+\ 'md-button',
+\ 'md-switch',
+\ 'md-list',
+\ 'md-list-item'
+\ ]
+
+
+let g:syntastic_html_tidy_ignore_errors = [
+\   'escaping malformed URI reference',
+\   '<img> lacks "src" attribute',
+\   'lacks "alt" attribute',
+\   '"flex"',
+\   '"ng-src"',
+\   'proprietary attribute "ng-',
+\   'proprietary attribute "layout',
+\   '"layout"',
+\   '"layout-align"'
+\ ]
