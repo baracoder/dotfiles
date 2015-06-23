@@ -103,6 +103,7 @@ let g:syntastic_cpp_compiler_options = ' -std=c++11'
 " file type dependant settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType html setl softtabstop=2 shiftwidth=2 tw=0
+autocmd FileType coffee setl softtabstop=2 shiftwidth=2 tw=0
 autocmd FileType rst setl spell spl=de
 
 
