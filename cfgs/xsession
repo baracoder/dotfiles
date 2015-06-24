@@ -29,9 +29,14 @@ feh --bg-fill --no-xinerama ~/.wallpapers/gentoo_1920x1200.jpg &
 # linclude local
 [ -f ~/.xsession.local ] && source ~/.xsession.local
 
-# exec window manger
-#exec /homoe/bara/usr/bin/ion3 
-exec awesome
-#exec /usr/bin/wmii
-#exec notion
+startWM() {
+    # exec window manger
+    #exec /homoe/bara/usr/bin/ion3 
+    awesome
+    #exec /usr/bin/wmii
+    #exec notion
+}
 
+until startWM; do
+    echo 'restarting wm'
+done
