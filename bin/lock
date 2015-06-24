@@ -1,5 +1,11 @@
 #!/bin/bash
 
 sleep 2 && xset dpms force off &
-/usr/bin/xlock -mode blank
+
+if [ -f /usr/bin/gnome-screensaver-command ]; then
+    exec gnome-screensaver-command -l
+fi
+if [ -f /usr/bin/xlock ]; then
+    exec /usr/bin/xlock -mode blank
+fi
 
