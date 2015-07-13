@@ -115,6 +115,11 @@ if has("autocmd")
 end
 
 let g:syntastic_html_tidy_blocklevel_tags = [
+\ 'openlayers',
+\ 'ol-marker',
+\ 'md-autocomplete',
+\ 'md-item-template',
+\ 'md-not-found',
 \ 'md-toolbar',
 \ 'md-sidenav',
 \ 'md-content',
