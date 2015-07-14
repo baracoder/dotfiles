@@ -11,6 +11,8 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 
+local scratch = require("scratch")
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -206,6 +208,7 @@ root.buttons(awful.util.table.join(
 
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
+    awful.key({ modkey }, "`", function () scratch.drop("roxterm", "bottom") end),
    --awful.key({ "Mod1"             }, "Tab",       function ()
    --     local cmenu = awful.menu.clients({width=256}, { keygrabber=true })
    -- end),

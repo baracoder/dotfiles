@@ -45,6 +45,7 @@ let mapleader=","                           " set lead for custom bindings
 nmap <silent> <leader>ev :e ~/.vimrc<CR>
 " while inserting toggle paste mode
 set pastetoggle=<F2>
+nnoremap <silent> <F3> :set cursorline!<CR>
 " ; also changes to command mode
 nnoremap ; :
 " go over warped lines
@@ -105,9 +106,8 @@ autocmd BufNewFile,BufRead *.hamlc setl ft=haml
 " file type dependant settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType html setl softtabstop=2 shiftwidth=2 tw=0
-autocmd FileType coffee setl softtabstop=2 shiftwidth=2 tw=0
 autocmd FileType rst setl spell spl=de
-autocmd FileType coffee setl softtabstop=2 shiftwidth=2
+autocmd FileType coffee setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 " create directory on write
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
