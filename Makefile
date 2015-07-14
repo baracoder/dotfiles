@@ -5,7 +5,7 @@ configs:
 
 programs: opt/bitpocket opt/gcinvoice opt/autojump opt/pulseaudio-ctl
 
-vim: vim-pathogen vim-ctrlp vim-Align vim-tagbar vim-syntastic vim-gpg vim-coffee-script
+vim: vim-pathogen vim-ctrlp vim-Align vim-tagbar vim-syntastic vim-gpg vim-coffee-script vim-jade
 
 vim-pathogen: ~/.vim/autoload/pathogen.vim
 ~/.vim/autoload/pathogen.vim:
@@ -42,6 +42,10 @@ vim-gpg: ~/.vim/bundle/vim-gnupg
 vim-coffee-script: ~/.vim/bundle/vim-coffee-script
 ~/.vim/bundle/vim-coffee-script:
 	git clone https://github.com/kchmck/vim-coffee-script.git $@
+
+vim-jade: ~/.vim/bundle/vim-jade
+~/.vim/bundle/vim-jade:
+	git clone git://github.com/digitaltoad/vim-jade.git $@
 
 
 
