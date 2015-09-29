@@ -18,7 +18,7 @@
 
 DMENU_ARGS=${DMENU_ARGS- -f -l 16 -p man}
 DMENU_ARGS+=" $@"
-MAN=${MAN:-man}
+MAN=${MAN:-roxterm -e man}
 
 DMENU=${DMENU:-dmenu ${DMENU_ARGS}}
 
