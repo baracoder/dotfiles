@@ -32,6 +32,12 @@ print -l /usr/share/man/man[0-9]/* |
               sub(/\.[0-9][^.]*(\.gz)?$/,
                   "",
                   $6)
+              sub(/(\.bz2)$/,
+                  "",
+                  section)
+              sub(/\.[0-9][^.]*(\.bz2)?$/,
+                  "",
+                  $6)
               print($6"("section")")}' |
   sort |
   ${=DMENU} |
