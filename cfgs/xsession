@@ -20,20 +20,9 @@ xkbevd -bg &
 #xset -b
 #skype &
 
-# start compositor
-xcompmgr -cCfF -r7 -o.65 -l-10 -t-8 -D7 &
 
 # linclude local
 [ -f ~/.xsession.local ] && source ~/.xsession.local
 
-startWM() {
-    # exec window manger
-    #exec /homoe/bara/usr/bin/ion3 
-    awesome
-    #exec /usr/bin/wmii
-    #exec notion
-}
-
-until startWM; do
-    echo 'restarting wm'
-done
+# start window manager
+i3
