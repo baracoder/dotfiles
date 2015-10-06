@@ -2,6 +2,8 @@
 source /etc/profile
 source ~/.profile
 
+export TERMINAL=roxterm
+
 # start programms in background
 numlockx &
 pulseaudio -D &
@@ -20,9 +22,8 @@ xkbevd -bg &
 #xset -b
 #skype &
 
-
 # linclude local
 [ -f ~/.xsession.local ] && source ~/.xsession.local
 
 # start window manager
-i3
+exec i3

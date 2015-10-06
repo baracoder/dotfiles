@@ -179,3 +179,5 @@ bar {
         tray_output primary
         status_command i3status
 }
+
+for_window [title="gitk"] floating enable

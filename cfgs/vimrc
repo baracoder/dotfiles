@@ -1,7 +1,10 @@
 set nocompatible                            " Use Vim defaults (much better!)
 
-" enable pathogen
-call pathogen#infect()
+
+runtime! autoload/pathogen.vim
+if exists("*pathogen#infect")
+    call pathogen#infect()
+endif
 
 " auto completion
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -108,6 +111,7 @@ autocmd BufNewFile,BufRead *.hamlc setl ft=haml
 autocmd FileType html setl softtabstop=2 shiftwidth=2 tw=0
 autocmd FileType rst setl spell spl=de
 autocmd FileType coffee setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+autocmd FileType jade setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 " create directory on write
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

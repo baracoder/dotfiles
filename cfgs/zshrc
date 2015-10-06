@@ -100,4 +100,4 @@ case $TERM in
     ;;
 esac
 
-
+test -e ~/.zshrc.local && source ~/.zshrc.local
