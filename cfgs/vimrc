@@ -1,10 +1,16 @@
 set nocompatible                            " Use Vim defaults (much better!)
 
+call plug#begin('~/.vim/plugged')
+    Plug 'kien/ctrlp.vim'
+    Plug 'benekastah/neomake'
+    Plug 'vim-scripts/Align'
+    Plug 'jamessan/vim-gnupg'
+    Plug 'kchmck/vim-coffee-script'
+    Plug 'digitaltoad/vim-jade'
+call plug#end()
 
-runtime! autoload/pathogen.vim
-if exists("*pathogen#infect")
-    call pathogen#infect()
-endif
+autocmd! BufWritePost * Neomake
+
 
 " auto completion
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -15,7 +21,7 @@ set wildignore+=*/node_modules/*
 
 " Display
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme koehler                         " nicer colors
+colorscheme desert                         " nicer colors
 set list listchars=tab:»·,trail:·,extends:#
                                             " higlight extra whitespaces
 set title                                   " change terminal title
