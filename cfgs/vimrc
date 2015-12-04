@@ -1,10 +1,18 @@
 set nocompatible                            " Use Vim defaults (much better!)
 
+call plug#begin('~/.vim/plugged')
+    Plug 'kien/ctrlp.vim'
+    Plug 'benekastah/neomake'
+    Plug 'vim-scripts/Align'
+    Plug 'jamessan/vim-gnupg'
+    Plug 'kchmck/vim-coffee-script'
+    Plug 'digitaltoad/vim-jade'
+    Plug 'godlygeek/tabular'
+    Plug 'plasticboy/vim-markdown'
+call plug#end()
 
-runtime! autoload/pathogen.vim
-if exists("*pathogen#infect")
-    call pathogen#infect()
-endif
+autocmd! BufWritePost * Neomake
+
 
 " auto completion
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -15,7 +23,7 @@ set wildignore+=*/node_modules/*
 
 " Display
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme koehler                         " nicer colors
+colorscheme industry                         " nicer colors
 set list listchars=tab:»·,trail:·,extends:#
                                             " higlight extra whitespaces
 set title                                   " change terminal title
@@ -70,6 +78,7 @@ nmap <silent> <leader>n :lnext<CR>
 nmap <silent> <leader>p :lprev<CR>
 " format json
 nmap <Leader>j :%!python -m json.tool<CR>
+vmap <Leader>j :<,'>!python -m json.tool<CR>
 " format xml
 nmap <Leader>x :%!xmllint --encode UTF-8 --format -<CR>
 " open/close errors view
@@ -121,36 +130,3 @@ if has("autocmd")
   autocmd BufWritePre * :silent !mkdir -p %:p:h
 end
 
-let g:syntastic_html_tidy_blocklevel_tags = [
-\ 'openlayers',
-\ 'ol-marker',
-\ 'md-autocomplete',
-\ 'md-item-template',
-\ 'md-not-found',
-\ 'md-toolbar',
-\ 'md-sidenav',
-\ 'md-content',
-\ 'md-icon',
-\ 'md-subheader',
-\ 'md-divider',
-\ 'md-input-container',
-\ 'md-radio-group',
-\ 'md-radio-button',
-\ 'md-button',
-\ 'md-switch',
-\ 'md-list',
-\ 'md-list-item'
-\ ]
-
-
-let g:syntastic_html_tidy_ignore_errors = [
-\   'escaping malformed URI reference',
-\   '<img> lacks "src" attribute',
-\   'lacks "alt" attribute',
-\   '"flex"',
-\   '"ng-src"',
-\   'proprietary attribute "ng-',
-\   'proprietary attribute "layout',
-\   '"layout"',
-\   '"layout-align"'
-\ ]
