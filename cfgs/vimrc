@@ -105,6 +105,8 @@ autocmd BufNewFile,BufRead ~/src/kita-verwaltung/* setl softtabstop=2 shiftwidth
 
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
 autocmd BufNewFile,BufRead *.hamlc setl ft=haml
+autocmd BufNewFile,BufRead *.vsh setl syntax=c
+autocmd BufNewFile,BufRead *.fsh setl syntax=c
 
 " file type dependant settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
