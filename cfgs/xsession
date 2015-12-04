@@ -7,7 +7,8 @@ export TERMINAL=roxterm
 # start programms in background
 numlockx &
 pulseaudio -D &
-#trayion &
+xss-lock -v -- i3lock -c 000000 -d -e -n &
+
 synergys &
 xkbevd -bg &
 setxkbmap us
