@@ -9,6 +9,12 @@ call plug#begin('~/.vim/plugged')
     Plug 'digitaltoad/vim-jade'
     Plug 'godlygeek/tabular'
     Plug 'plasticboy/vim-markdown'
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'tpope/vim-fugitive'
+    Plug 'msanders/snipmate.vim'
+    Plug 'scrooloose/nerdtree'
+    Plug 'tpope/vim-surround'
+    Plug 'edsono/vim-matchit'
 call plug#end()
 
 autocmd! BufWritePost * Neomake
