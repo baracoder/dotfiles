@@ -103,6 +103,7 @@ set mouse=a                                 " enable mouse support
 
 " misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set clipboard=unnamed                       " set the clipboard to X11 one
 set textwidth=72                            " standardzeilenlänge
 set viminfo='20,\"500                       " Keep a .viminfo file.
 set history=50                              " keep 50 lines of command history
