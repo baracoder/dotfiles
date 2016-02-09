@@ -15,6 +15,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'scrooloose/nerdtree'
     Plug 'tpope/vim-surround'
     Plug 'edsono/vim-matchit'
+    Plug 'Valloric/YouCompleteMe'
 call plug#end()
 
 autocmd! BufWritePost * Neomake
