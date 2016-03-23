@@ -1,7 +1,7 @@
 ForwardX11 yes
 ForwardAgent yes
 # timeout beim verbinden
-#ConnectTimeout 10
+ConnectTimeout 10
 # keepalive pakete alle 30 sek
 TCPKeepAlive yes
 ServerAliveInterval 30
