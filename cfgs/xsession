@@ -1,6 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
 source /etc/profile
 source ~/.profile
+
+[ -f ~/.xsession.local ] && source ~/.xsession.local
 
 export TERMINAL=roxterm
 
@@ -23,7 +25,6 @@ xkbevd -bg &
 #skype &
 
 # linclude local
-[ -f ~/.xsession.local ] && source ~/.xsession.local
 
 # start window manager
 exec i3
