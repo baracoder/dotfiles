@@ -21,6 +21,11 @@ export LC_MEASUREMENT="de_DE.UTF-8"
 export LC_IDENTIFICATION="de_DE.UTF-8"
 
 
+export PATH="$HOME/src/go/bin:$PATH"
+export GOPATH="$HOME/src/go"
+
+export PATH="$HOME/.cabal/bin:$PATH"
+
 #------------------------------------------////
 #       Color Manpages
 #------------------------------------------////
