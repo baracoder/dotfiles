@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 find cfgs/ -type f | while read SRC; do
     echo -ne "linking $SRC\t"
