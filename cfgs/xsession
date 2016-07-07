@@ -16,7 +16,7 @@ xkbevd -bg &
 setxkbmap us
 xmodmap ~/.Xmodmap &
 roxterm &
-xset r rate 280 30 &
+xset r rate 240 40 &
 xset b 100 &
 
 xkbevd -bg &
