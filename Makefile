@@ -1,4 +1,8 @@
-all: vim configs programs
+all: vim configs programs wallpaper
+
+
+wallpaper:
+	make -C wallpaper
 
 configs: ~/.zshrc.grml
 	./relink
@@ -35,3 +39,5 @@ opt/autojump:
 	git clone git://github.com/joelthelion/autojump.git $@
 	cd $@ && ./install.sh --local
 
+
+.PHONY: wallpaper

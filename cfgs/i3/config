@@ -24,7 +24,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym $mod+F1  exec dmenu_man -nb '#070' -nf '#fff' -b
 bindsym $mod+F2  exec dmenu_run -b
 bindsym $mod+F4  exec dmenu_ssh -b
-bindsym $mod+F11 exec i3lock -c 000000 -d -e
+bindsym $mod+F11 exec i3lock -c 000000 -d -e -i ~/.dotfiles/wallpaper/wallpaper.png
 
 # go to urgent window
 bindsym $mod+Tab [urgent=latest] focus
