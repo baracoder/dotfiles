@@ -1,5 +1,5 @@
 [roxterm profile]
-colour_scheme=Bara
+colour_scheme=Default
 font=Terminus 10
 browser=chromium
 hide_menubar=1
