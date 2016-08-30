@@ -18,8 +18,7 @@ exec --no-startup-id xss-lock -v -- i3lock -c 000000 -d -e -n
 exec --no-startup-id synergys
 exec --no-startup-id numlockx
 exec --no-startup-id xkbevd -bg
-exec --no-startup-id setxkbmap us
-exec --no-startup-id xmodmap ~/.Xmodmap
+exec --no-startup-id sh -c 'setxkbmap us;  xmodmap ~/.Xmodmap'
 exec --no-startup-id xset r rate 280 30
 exec --no-startup-id xset b 100
 exec --no-startup-id sh ~/.xsession.local
