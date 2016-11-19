@@ -20,7 +20,7 @@ exec --no-startup-id xkbevd -bg
 exec --no-startup-id sh -c 'setxkbmap us;  xmodmap ~/.Xmodmap'
 exec --no-startup-id xset r rate 280 30
 exec --no-startup-id xset b 100
-#exec --no-startup-id sh ~/.xsession.local
+exec --no-startup-id sh ~/.xsession.local
 
 # volume buttons
 bindsym XF86AudioLowerVolume exec pamixer -d 3
