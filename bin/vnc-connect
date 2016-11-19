@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # connect to host using ssh and start vnc server on running session
 
 [ "$1" = "" ] && echo "$0 user@host [NR(0..)] [sshopts]" && exit 1
