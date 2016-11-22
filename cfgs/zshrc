@@ -24,7 +24,6 @@ alias -s log=vim
 alias -s html=vim
 
 
-
 # misc
 unsetopt beep # kein beepen
 setopt autocd # verzeichnis wechseln ohne cd
@@ -98,3 +97,7 @@ bindkey -M menuselect 'j' vi-down-line-or-history # bottom
 
 
 test -e ~/.zshrc.local && source ~/.zshrc.local
+
+if [ "$TERM" = "dumb" ]; then
+    PS1="> "
+fi
