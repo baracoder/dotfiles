@@ -7,8 +7,10 @@
     excludesfile = ~/.gitignore         # globale .gitignore
 
 [merge]                                 # tool für "git mergetool" festlegen
-    tool = meld
-    summary = true
+    tool = ediff
+[mergetool "ediff"]
+    cmd = emacsclient -c -a \"\"  --eval \"(ediff-merge-files-with-ancestor \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$BASE\\\" nil \\\"$MERGED\\\")\"
+
 
 [diff]                                  # tool für "git difftool" festlegen
     tool = meld
