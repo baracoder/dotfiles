@@ -3,8 +3,9 @@ source ~/.profile
 source ~/.zshrc.grml
 
 # enable autojump
-[[ -s ~/.autojump/etc/profile.d/autojump.zsh ]] && . ~/.autojump/etc/profile.d/autojump.zsh
-[[ -s /usr/share/autojump/autojump.zsh ]] && .  /usr/share/autojump/autojump.zsh
+#[[ -s ~/.autojump/etc/profile.d/autojump.zsh ]] && . ~/.autojump/etc/profile.d/autojump.zsh
+#[[ -s /usr/share/autojump/autojump.zsh ]] && .  /usr/share/autojump/autojump.zsh
+source $(autojump-share)/autojump.zsh
 
 # alias
 alias ls='ls --color=auto -p'
@@ -13,8 +14,6 @@ alias cgrep='grep -r --include=\*.{cpp,h}'
 alias g=git
 alias lmap="nmap 192.168.0.0/24"
 alias open="xdg-open"
-alias es="vim --servername default"
-alias e='vim --servername default --remote-silent'
 alias psgrep='ps aux|grep -i'
 alias c='python -ic "from __future__ import division; from math import *; from random import *"'
 alias htserv='python -m SimpleHTTPServer 8000'
