@@ -23,7 +23,9 @@ exec --no-startup-id xset r rate 280 30
 exec --no-startup-id xset b 100
 #exec --no-startup-id sh ~/.xsession.local
 
-# volume buttons
+# media control buttons
+bindsym $mod+Down exec pamixer -d 3
+bindsym $mod+Up exec pamixer -i 3
 bindsym XF86AudioLowerVolume exec pamixer -d 3
 bindsym XF86AudioRaiseVolume exec pamixer -i 3
 bindsym XF86AudioMute exec pamixer -t
@@ -31,6 +33,7 @@ bindsym XF86Display exec xrandr --auto
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 
+# menus
 bindsym $mod+F1  exec dmenu_man -nb '#070' -nf '#fff' -b
 bindsym $mod+F2  exec dmenu_run -b
 bindsym $mod+F4  exec rofi -show ssh
@@ -79,10 +82,10 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+#bindsym $mod+Left focus left
+#indsym $mod+Down focus down
+#bindsym $mod+Up focus up
+#bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+h move left
