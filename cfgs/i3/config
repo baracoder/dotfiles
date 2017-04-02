@@ -11,7 +11,6 @@
 
 set $mod Mod4
 
-workspace_auto_back_and_forth yes
 
 
 exec --no-startup-id xss-lock -v -- i3lock -c 000000 -d -e -n
@@ -201,4 +200,20 @@ for_window [title="Git Gui"] floating enable
 for_window [window_role="pop-up"] floating enable
 
 
+for_window [class="^Steam$" title="^Friends$"] floating enable
+for_window [class="^Steam$" title="Steam - News"] floating enable
+for_window [class="^Steam$" title=".* - Chat"] floating enable
+for_window [class="^Steam$" title="^Settings$"] floating enable
+for_window [class="^Steam$" title=".* - event started"] floating enable
+for_window [class="^Steam$" title=".* CD key"] floating enable
+for_window [class="^Steam$" title="^Steam - Self Updater$"] floating enable
+for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
+for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
+for_window [title="Steam"] fullscreen disable
+for_window [title="Steam"] floating disable
+for_window [title="^Steam Keyboard$"] floating enable
+
+
 popup_during_fullscreen leave_fullscreen
+focus_on_window_activation focus
+workspace_auto_back_and_forth yes
