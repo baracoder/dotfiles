@@ -1,1 +1,5 @@
-ec
+#!/bin/sh
+
+[ -n "$SSH_TTY" ] && exec emacsclient -tc $*
+
+exec emacsclient -c $*
