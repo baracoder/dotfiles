@@ -94,6 +94,8 @@ bindkey -M menuselect 'l' vi-forward-char         # right
 bindkey -M menuselect 'j' vi-down-line-or-history # bottom
 
 
+source <(kubectl completion zsh)  # setup autocomplete in zsh
+
 
 
 test -e ~/.zshrc.local && source ~/.zshrc.local
