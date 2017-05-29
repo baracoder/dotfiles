@@ -11,7 +11,6 @@ numlockx &
 pulseaudio -D &
 xss-lock -v -- i3lock -c 000000 -d -e -n -i ~/.dotfiles/wallpaper/wallpaper.png &
 
-synergys &
 xkbevd -bg &
 setxkbmap us
 xmodmap ~/.Xmodmap &
