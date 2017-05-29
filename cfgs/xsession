@@ -27,6 +27,6 @@ xkbevd -bg &
 
 # set wallpaper
 feh --bg-scale ~/.dotfiles/wallpaper/wallpaper.png
-emacs --daemon
+emacs --daemon &
 # start window manager
 exec i3
