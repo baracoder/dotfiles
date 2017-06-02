@@ -11,15 +11,25 @@
 
 set $mod Mod4
 
+#exec --no-startup-id dbus-send \
+#    --session \
+#    --print-reply=literal \
+#    --dest=org.gnome.SessionManager \
+#    "/org/gnome/SessionManager" \
+#    org.gnome.SessionManager.RegisterClient \
+#    "string:i3" \
+#    "string:$DESKTOP_AUTOSTART_ID"
 
-
-exec --no-startup-id xss-lock -v -- i3lock -t -c 000000 -d -e -n
+#exec --no-startup-id xss-lock -v -- i3lock -t -c 000000 -d -e -n
 exec --no-startup-id numlockx
-exec --no-startup-id xkbevd -bg
+#exec --no-startup-id xkbevd -bg
 exec --no-startup-id sh -c 'setxkbmap us;  xmodmap ~/.Xmodmap'
 exec --no-startup-id xset r rate 280 30
 exec --no-startup-id xset b 100
 exec --no-startup-id sh ~/.xsession.local
+exec --no-startup-id emacs --daemon
+exec --no-startup-id sh -c 'feh --bg-scale ~/.dotfiles/wallpaper/wallpaper.png'
+exec --no-startup-id light-locker --lock-after-screensaver=10 --lock-on-suspend --idle-hint
 
 # media control buttons
 bindsym $mod+Down exec pamixer -d 3
@@ -35,7 +45,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym $mod+F1  exec dmenu_man -nb '#070' -nf '#fff' -b
 bindsym $mod+F2  exec dmenu_run -b
 bindsym $mod+F4  exec rofi -show ssh
-bindsym $mod+F11 exec i3lock -c 000000 -d -e -i ~/.dotfiles/wallpaper/wallpaper.png
+bindsym $mod+F11 exec light-locker-command -l
 
 # go to urgent window
 bindsym $mod+Tab [urgent=latest] focus
