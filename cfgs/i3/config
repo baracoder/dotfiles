@@ -207,6 +207,7 @@ bar {
 for_window [title="gitk"] floating enable
 for_window [title="Git Gui"] floating enable
 for_window [window_role="pop-up"] floating enable
+for_window [instance="RAIL"] floating enable
 
 
 for_window [class="^Steam$" title="^Friends$"] floating enable
