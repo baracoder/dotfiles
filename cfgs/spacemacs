@@ -55,6 +55,7 @@ values."
      xkcd
      colors
      nixos
+     terraform
      ;; elm
      )
    ;; List of additional packages that will be installed without being
