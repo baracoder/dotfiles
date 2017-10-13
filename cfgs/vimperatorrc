@@ -1,7 +1,7 @@
-# goto last tab
+" goto last tab
 map <C-Tab> <C-^>
 
-# bookmarks
+" bookmarks
 map s <ESC>:sb Bookmarks<CR>
 map S <ESC>:sbcl<CR>
 
@@ -10,3 +10,4 @@ imap <C-c> <Esc>
 set hlsearch
 
 set gui=noaddons,nobookmarks,nomenu,nonavigation,tabs
+set hintchars=asdfhjkl
