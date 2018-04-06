@@ -41,6 +41,14 @@ Host *.beuth-hochschule.de
 User s36321
 Compression yes
 
+
+Host kube*
+User core
+Host core*
+User core
+Host minikube
+User minikube
+
 Host compute
 HostName compute.beuth-hochschule.de
 User s36321
