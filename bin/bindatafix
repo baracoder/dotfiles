@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+egrep -oh 'BinData\(0, [A-Z0-9]+\)' | \
+while read BINDATA; do
+    HEXDATAWITHSUFFIX=${BINDATA#BinData\(0, }
+    HEXDATA=${HEXDATAWITHSUFFIX%\)}
+    echo "BinData(0, \"$(echo $HEXDATA |xxd -r -p | base64)\"),"
+done
