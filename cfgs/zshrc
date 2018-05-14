@@ -33,7 +33,7 @@ setopt completeinword # autocompletion mitten im wort
 
 # history zeug
 export HISTSIZE=2000
-export HISTFILE="$HOME/.history"
+export HISTFILE="$HOME/.zsh.history"
 export SAVEHIST=$HISTSIZE
 setopt hist_ignore_all_dups # keine doppelten einträge
 setopt hist_ignore_space    # spaces zusammenfassen
