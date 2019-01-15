@@ -31,9 +31,9 @@ setopt completeinword # autocompletion mitten im wort
 
 
 # history zeug
-export HISTSIZE=2000
-export HISTFILE="$HOME/.zsh.history"
-export SAVEHIST=$HISTSIZE
+HISTFILE="$HOME/.zsh.history"
+HISTSIZE=2000
+SAVEHIST=$HISTSIZE
 setopt hist_ignore_all_dups # keine doppelten einträge
 setopt hist_ignore_space    # spaces zusammenfassen
 setopt inc_append_history   # befehl sofort in history anhängen
