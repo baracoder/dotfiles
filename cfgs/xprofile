@@ -1,5 +1,5 @@
 
-export TERMINAL=roxterm
+export TERMINAL=gnome-terminal
 export GTK_DATA_PREFIX=$HOME/.nix-profile
 
 source /etc/profile
