@@ -1,0 +1,10 @@
+#!/bin/sh
+
+DOTNET_BIN=$(realpath `which dotnet`)
+DOTNET_DIR=`dirname $DOTNET_BIN`
+
+eval LD_LIBRARY_PATH=$DOTNET_DIR/shared/Microsoft.NETCore.App/2.2.1/
+export LD_LIBRARY_PATH
+export MSBuildExtensionsPath=/home/bara/opt/msbuild/15.0/bin/Extensions
+#env |grep LD_LIBRARY_PATH
+exec rider
