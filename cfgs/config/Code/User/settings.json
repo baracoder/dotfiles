@@ -1,0 +1,9 @@
+{
+    "update.mode": "none",
+    "search.useGlobalIgnoreFiles": true,
+    "gitflow4code.deleteBranchByDefault": true,
+    "git.autofetch": true,
+    "vim.useSystemClipboard": true,
+    "vim.highlightedyank.enable": true,
+    "vim.hlsearch": true
+}
