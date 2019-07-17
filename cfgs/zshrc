@@ -3,7 +3,7 @@ source ~/.zshrc.grml
 # enable autojump
 #[[ -s ~/.autojump/etc/profile.d/autojump.zsh ]] && . ~/.autojump/etc/profile.d/autojump.zsh
 #[[ -s /usr/share/autojump/autojump.zsh ]] && .  /usr/share/autojump/autojump.zsh
-source $(autojump-share)/autojump.zsh
+[[ -s /run/current-system/sw/share/autojump/autojump.zsh ]] && . /run/current-system/sw/share/autojump/autojump.zsh
 
 # alias
 alias ls='ls --color=auto -p'
