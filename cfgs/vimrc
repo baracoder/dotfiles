@@ -1,23 +1,5 @@
 set nocompatible                            " Use Vim defaults (much better!)
 
-call plug#begin('~/.vim/plugged')
-    Plug 'kien/ctrlp.vim'
-    Plug 'benekastah/neomake'
-    Plug 'vim-scripts/Align'
-    Plug 'jamessan/vim-gnupg'
-    Plug 'kchmck/vim-coffee-script'
-    Plug 'digitaltoad/vim-jade'
-    Plug 'godlygeek/tabular'
-    Plug 'plasticboy/vim-markdown'
-    Plug 'Shougo/deoplete.nvim'
-    Plug 'tpope/vim-fugitive'
-    Plug 'msanders/snipmate.vim'
-    Plug 'scrooloose/nerdtree'
-    Plug 'tpope/vim-surround'
-    Plug 'edsono/vim-matchit'
-    ""Plug 'Valloric/YouCompleteMe'
-call plug#end()
-
 autocmd! BufWritePost * Neomake
 
 
@@ -31,7 +13,7 @@ set wildignore+=*/node_modules/*
 " Display
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme industry                         " nicer colors
-set list listchars=tab:»·,trail:·,extends:#
+set list listchars=tab:ï¿½ï¿½,trail:ï¿½,extends:#
                                             " higlight extra whitespaces
 set title                                   " change terminal title
 set visualbell                              " blink on errors
@@ -105,7 +87,7 @@ set mouse=a                                 " enable mouse support
 " misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set clipboard=unnamed                       " set the clipboard to X11 one
-set textwidth=72                            " standardzeilenlänge
+set textwidth=72                            " standardzeilenlï¿½nge
 set viminfo='20,\"500                       " Keep a .viminfo file.
 set history=50                              " keep 50 lines of command history
 set autowrite                               " Datei bei :next usw speichern
