@@ -4,6 +4,7 @@ source ~/.zshrc.grml
 #[[ -s ~/.autojump/etc/profile.d/autojump.zsh ]] && . ~/.autojump/etc/profile.d/autojump.zsh
 #[[ -s /usr/share/autojump/autojump.zsh ]] && .  /usr/share/autojump/autojump.zsh
 [[ -s /run/current-system/sw/share/autojump/autojump.zsh ]] && . /run/current-system/sw/share/autojump/autojump.zsh
+whence -p gcloud &>/dev/null && source $(realpath  $(dirname $(realpath $(which gcloud)))/../completion.zsh.inc)
 
 # alias
 alias ls='ls --color=auto -p'
