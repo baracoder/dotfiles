@@ -1,45 +1,45 @@
-[user]                                  # Benutzerdaten
+[user]
     name = Herman Fries
     email = baracoder@googlemail.com
 
 [core]
-    editor = vim                        # standardeditor festlegen
-    excludesfile = ~/.gitignore         # globale .gitignore
+    editor = vim
+    excludesfile = ~/.gitignore
 
-[merge]                                 # tool für "git mergetool" festlegen
-    tool = ediff
+[merge]
+    tool = meld
 [mergetool "ediff"]
-    cmd = emacsclient -c -a \"\"  --eval \"(ediff-merge-files-with-ancestor \\\"$LOCAL\\\" \\\"$REMOTE\\\" \\\"$BASE\\\" nil \\\"$MERGED\\\")\"
+    cmd = meld
 
 
-[diff]                                  # tool für "git difftool" festlegen
+[diff]
     tool = meld
 
-[color]                                 # Farben einschalten
+[color]
     ui = auto
     diff = auto
     status = auto
     branch = auto
 
-[alias]                                 # Abkürzungen
-    st  = status
-    ci  = commit
-    cm  = commit -m                     # commit text als parameter
-    co  = checkout
-    pl  = pull                          # pull mit merge  ausführen
-    plr = pull --rebase                 # pull mit rebase ausführen
-    f   = fetch
-    ps  = push
-    b   = branch
-    m   = merge
-    dt  = difftool
-    mt  = mergetool
-    unstage = reset HEAD --             # Datei aus index entfernen
+[alias]
+    st = status
+    ci = commit
+    cm = commit -m # commit text als parameter
+    co = checkout
+    pl = pull # pull mit merge  ausführen
+    plr = pull --rebase # pull mit rebase ausführen
+    f = fetch
+    ps = push
+    b = branch
+    m = merge
+    dt = difftool
+    mt = mergetool
+    unstage = reset HEAD -- # Datei aus index entfernen
 
-    vis = !gitk --all &                 # Visualisierungen:
-    tig = !tig --all                    # "git-gui", "gitk und "tig" müssen
-    num = shortlog -s -n                # vielleicht nachinstalliert werden
-    g   = !git gui &
+    vis = !gitk --all & # Visualisierungen:
+    tig = !tig --all # "git-gui", "gitk und "tig" müssen
+    num = shortlog -s -n # vielleicht nachinstalliert werden
+    g = !git gui &
     lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
 
     # readonly server zum verteilen im lokalen netz
@@ -48,7 +48,7 @@
     # zugreifen
     serve = daemon --reuseaddr --base-path=.git --export-all --verbose
 
-    dif = diff                          # Abkürzungen für typos
+    dif = diff # Abkürzungen für typos
     psuh = push
     psh = push
 
@@ -58,3 +58,19 @@
 
 [include]
     path = ~/.gitconfig.local
+[includeIf "gitdir:~/nyris/"]
+    path = ~/.gitconfig.work
+
+[gc]
+	autoDetach = false
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[gpg]
+	program = gpg
+[commit]
+	gpgSign = false
+[tag]
+	forceSignAnnotated = false
