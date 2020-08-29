@@ -6,3 +6,7 @@ tags
 .#*
 /venv
 .idea/
+google.json
+/build-dir
+/.flatpak-builder
+.ionide
