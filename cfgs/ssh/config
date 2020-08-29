@@ -7,39 +7,10 @@ TCPKeepAlive yes
 ServerAliveInterval 30
 
 # server
-Host flatline
-HostName flatline.zebar.de
+Host snowball
+HostName snowball.zebar.de
 Compression yes
 User root
-
-Host molly
-Hostname crasawa.com
-
-Host case
-HostName case.zebar.de
-User root
-Port 122
-
-Host finn
-HostName finn.zebar.de
-Port 322
-
-Host zebar.de
-User root
-Compression yes
-ForwardAgent yes
-
-Host armitage
-HostName armitage.zebar.de
-RemoteForward 2020 localhost:22
-Port 622
-Compression yes
-
-
-# Beuth hochschulrechner
-Host *.beuth-hochschule.de
-User s36321
-Compression yes
 
 
 Host kube*
@@ -48,11 +19,3 @@ Host core*
 User core
 Host minikube
 User minikube
-
-Host compute
-HostName compute.beuth-hochschule.de
-User s36321
-Compression yes
-ForwardAgent yes
-
-
