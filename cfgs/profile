@@ -1,3 +1,5 @@
+export TERMINAL=gnome-terminal
+export GTK_DATA_PREFIX=$HOME/.nix-profile
 
 export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:$HOME/.nix-profile/bin"
