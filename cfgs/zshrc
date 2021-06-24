@@ -125,3 +125,6 @@ command_not_found_handler() {
   fi
 }
 fi
+
+# direnv hook
+eval "$(direnv hook zsh)"
