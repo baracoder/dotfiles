@@ -1,7 +1,0 @@
-XTerm*Background: black
-XTerm*Foreground: white
-Xft.dpi:        96
-Xft.antialias:  true
-Xft.rgba:       rgb
-Xft.hinting:    true
-Xft.hintstyle:  hintslight
