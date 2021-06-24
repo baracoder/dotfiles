@@ -22,6 +22,11 @@
     branch = auto
 
 [alias]
+    # pr management
+    pr  = "!f() { git fetch -fu ${2:-$(git remote |grep ^upstream || echo origin)} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
+    pr-clean = "!git for-each-ref refs/heads/pr/* --format='%(refname)' | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
+
+
     st = status
     ci = commit
     cm = commit -m # commit text als parameter
@@ -63,11 +68,6 @@
 
 [gc]
 	autoDetach = false
-[filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
 [gpg]
 	program = gpg
 [commit]
