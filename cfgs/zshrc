@@ -39,6 +39,9 @@ setopt hist_ignore_all_dups # keine doppelten einträge
 setopt hist_ignore_space    # spaces zusammenfassen
 setopt inc_append_history   # befehl sofort in history anhängen
 
+# fix "no matches found"
+unsetopt nomatch
+
 
 
 # farben
