@@ -1,1 +1,5 @@
-profile
+
+export TERMINAL=gnome-terminal
+
+source /etc/profile
+source ~/.profile
