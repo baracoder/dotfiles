@@ -28,6 +28,11 @@ export GOPATH="$HOME/src/go"
 
 export PATH="$HOME/.cabal/bin:$PATH"
 
+# set DOTNET_ROOT
+if which dotnet > /dev/null; then
+    export DOTNET_ROOT=$(dirname $(realpath $(which dotnet)))
+fi
+
 # fix msbuild for net462
 export FrameworkPathOverride=$(realpath -- $(dirname $(readlink `which mono`))/../lib/mono/4.5)
 
