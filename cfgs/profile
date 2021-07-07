@@ -7,9 +7,6 @@ export PATH="$PATH:$HOME/.cabal/bin"
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/mutable_node_modules/bin"
 
-export EDITOR="emacsclient -c"
-export TERMINAL=roxterm
-
 #export LC_ALL="de_DE.UTF-8"
 export LC_MESSAGES="en_US.UTF-8"
 #export LC_CTYPE="de_DE.UTF-8.UTF-8"
