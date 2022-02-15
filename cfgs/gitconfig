@@ -11,6 +11,8 @@
 [mergetool "ediff"]
     cmd = meld
 
+[fetch]
+    prune = true
 
 [diff]
     tool = meld
