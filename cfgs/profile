@@ -33,9 +33,6 @@ if which dotnet > /dev/null; then
     export DOTNET_ROOT=$(dirname $(realpath $(which dotnet)))
 fi
 
-# fix msbuild for net462
-export FrameworkPathOverride=$(realpath -- $(dirname $(readlink `which mono`))/../lib/mono/4.5)
-
 #------------------------------------------////
 #       Color Manpages
 #------------------------------------------////
