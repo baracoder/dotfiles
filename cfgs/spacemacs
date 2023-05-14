@@ -66,6 +66,10 @@ This function should only modify configuration layer settings."
      nixos
      terraform
 
+     react
+     typescript
+     html
+
      (treemacs :variables
                treemacs-use-follow-mode 't
                treemacs-collapse-dirs 3
