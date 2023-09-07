@@ -1,4 +1,4 @@
-ForwardX11 yes
+#ForwardX11 yes
 ForwardAgent yes
 # timeout beim verbinden
 ConnectTimeout 10
@@ -11,6 +11,12 @@ Host snowball
 HostName snowball.zebar.de
 Compression yes
 User root
+
+# PCs
+Host hal
+ForwardX11 yes
+Host hex
+ForwardX11 yes
 
 
 Host kube*
