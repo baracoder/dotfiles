@@ -1,31 +1,38 @@
-function fish_prompt --description 'Write out the prompt'
-    set -l last_pipestatus $pipestatus
-    set -lx __fish_last_status $status # Export for __fish_print_pipestatus.
-    set -l normal (set_color normal)
-    set -q fish_color_status
-    or set -g fish_color_status --background=red white
+function fish_prompt
+end
 
-    # Color the prompt differently when we're root
-    set -l color_cwd $fish_color_cwd
-    set -l suffix '>'
-    if functions -q fish_is_root_user; and fish_is_root_user
-        if set -q fish_color_cwd_root
-            set color_cwd $fish_color_cwd_root
-        end
-        set suffix '#'
+status is-interactive || exit
+
+_tide_remove_unusable_items
+_tide_cache_variables
+
+# The first element in $$_tide_prompt_var is right prompt
+# All remaining ones are 'left' prompt (also upper right in 2-line prompts)
+set -g _tide_prompt_var _tide_prompt_$fish_pid
+
+function _tide_refresh_prompt --on-variable $_tide_prompt_var
+    set -g _tide_self_repainting # prevents us from creating a second background job
+    commandline --function repaint
+end
+
+function fish_prompt
+    _tide_last_status=$status _tide_last_pipestatus=$pipestatus if not set -e _tide_self_repainting
+        jobs --query
+        fish --command "_tide_jobs_status=$status CMD_DURATION=$CMD_DURATION COLUMNS=$COLUMNS \
+            fish_bind_mode=$fish_bind_mode set -U $_tide_prompt_var (_tide_prompt)" &
+        builtin disown
+
+        command kill $_tide_last_pid 2>/dev/null
+        set -g _tide_last_pid $last_pid
     end
 
-    # Write pipestatus
-    # If the status was carried over (e.g. after `set`), don't bold it.
-    set -l bold_flag --bold
-    set -q __fish_prompt_status_generation; or set -g __fish_prompt_status_generation $status_generation
-    if test $__fish_prompt_status_generation = $status_generation
-        set bold_flag
-    end
-    set __fish_prompt_status_generation $status_generation
-    set -l status_color (set_color $fish_color_status)
-    set -l statusb_color (set_color $bold_flag $fish_color_status)
-    set -l prompt_status (__fish_print_pipestatus "[" "]" "|" "$status_color" "$statusb_color" $last_pipestatus)
+    string unescape $_tide_add_newline $$_tide_prompt_var[1][2..]
+end
 
-    echo -n -s (prompt_login)' ' (set_color $color_cwd) (prompt_pwd) $normal (fish_vcs_prompt) $normal " "$prompt_status $suffix " "
+function fish_right_prompt
+    string unescape $$_tide_prompt_var[1][1]
+end
+
+function _tide_on_fish_exit --on-event fish_exit
+    set -e $_tide_prompt_var
 end
