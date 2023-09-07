@@ -2,7 +2,7 @@
   {
     "name": "panel-top",
     "output": "DP-1",
-    "layer": "bottom",
+    "layer": "top",
     "position": "top",
     "controls": "right",
     "width": "auto",
@@ -29,7 +29,9 @@
     ],
     "controls-settings": {
       "components": [
-        "volume"
+        "volume",
+        "brightness",
+        "battery"
       ],
       "commands": {
         "net": "",
