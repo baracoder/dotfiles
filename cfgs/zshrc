@@ -1,10 +1,7 @@
 source ~/.zshrc.grml
 
-# enable autojump
-#[[ -s ~/.autojump/etc/profile.d/autojump.zsh ]] && . ~/.autojump/etc/profile.d/autojump.zsh
-#[[ -s /usr/share/autojump/autojump.zsh ]] && .  /usr/share/autojump/autojump.zsh
-[[ -s /run/current-system/sw/share/autojump/autojump.zsh ]] && . /run/current-system/sw/share/autojump/autojump.zsh
-whence -p gcloud &>/dev/null && source $(realpath  $(dirname $(realpath $(which gcloud)))/../completion.zsh.inc)
+## case-insensitive,partial-word and then substring completion
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 # alias
 alias ls='ls --color=auto -p'
@@ -98,7 +95,6 @@ bindkey -M menuselect 'j' vi-down-line-or-history # bottom
 
 
 source <(kubectl completion zsh)  # setup autocomplete in zsh
-source <(helm completion zsh)
 
 
 
@@ -106,27 +102,6 @@ test -e ~/.zshrc.local && source ~/.zshrc.local
 
 if [ "$TERM" = "dumb" ]; then
     PS1="> "
-fi
-
-
-if [ -n "$PS1" ]; then
-  # This function is called whenever a command is not found.
-command_not_found_handler() {
-  local p=/run/current-system/sw/bin/command-not-found
-  if [ -x $p -a -f /nix/var/nix/profiles/per-user/root/channels/nixos/programs.sqlite ]; then
-    # Run the helper program.
-    NIX_AUTO_RUN=true $p "$@"
-    # Retry the command if we just installed it.
-    if [ $? = 126 ]; then
-      "$@"
-    else
-      return 127
-    fi
-  else
-    echo "$1: command not found" >&2
-    return 127
-  fi
-}
 fi
 
 # direnv hook
