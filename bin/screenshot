@@ -1,25 +1,4 @@
 #!/bin/bash
 
-DIR="/tmp/screenshots"
-DATE="$(date +%Y%m%d@%H%M%S)"
-NAME="${DIR}/screenshot-${DATE}.png"
+grim -g "$(slurp)" - | swappy -f -
 
-# Testen, ob das Verzeichniss zum speichern der Screenshots existiert, andernfalls wird es erstellt
-[ ! -d "${DIR}" ] && mkdir "${DIR}"
-
-
-# OPTIONEN
-# Screenshot von einem Fenster
-[ "$1" = "win" ] && import "${NAME}" && exit 0
-
-# Screenshot des gesamten Bildschirms
-[ "$1" = "scr" ] && import -window root "${NAME}" && exit 0
-
-# Screenshot von einem Bereich
-[ "$1" = "area" ] && import "${NAME}" && exit 0
-
-
-# argument stimmt nicht! hilfe augeben
-echo "$0 [win|scr|area]"
-echo "saves png to $DIR"
-exit 1
