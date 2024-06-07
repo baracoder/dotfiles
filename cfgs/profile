@@ -28,6 +28,8 @@ export GOPATH="$HOME/src/go"
 
 export PATH="$HOME/.cabal/bin:$PATH"
 
+export PATH="$HOME/.dotnet/bin:$PATH"
+
 # set DOTNET_ROOT
 if which dotnet > /dev/null; then
     export DOTNET_ROOT=$(dirname $(realpath $(which dotnet)))
