@@ -34,6 +34,9 @@ unsetopt beep # kein beepen
 setopt autocd # verzeichnis wechseln ohne cd
 setopt extended_glob
 setopt completeinword # autocompletion mitten im wort
+disable -p '#' # don't treat # as pattern character
+
+RPROMPT='%{$fg[blue]%}($ZSH_KUBECTL_PROMPT)%{$reset_color%}'
 
 
 # history zeug
