@@ -115,5 +115,7 @@ if [ "$TERM" = "dumb" ]; then
     PS1="> "
 fi
 
+unset -f zed
+
 # direnv hook
 eval "$(direnv hook zsh)"
