@@ -1,6 +1,5 @@
 all: ~/.zshrc.grml
 	./relink
-	make -C wallpaper
 	rm -f ~/.xsession
 
 ~/.zshrc.grml:
