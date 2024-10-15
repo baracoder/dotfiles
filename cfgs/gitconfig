@@ -67,7 +67,7 @@
 
 [include]
     path = ~/.gitconfig.local
-[includeIf "gitdir:~/nyris/"]
+[includeIf "gitdir:~/tibber/"]
     path = ~/.gitconfig.work
 
 [gc]
