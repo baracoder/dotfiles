@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-find cfgs -type f | while read SRC; do
+find cfgs -type f -o -type l | while read SRC; do
     echo -ne "linking $SRC\t"
     TARGET=".${SRC##cfgs/}"
     [ -e ~/$TARGET -a ! -L ~/$TARGET ] && echo "$TARGET is not a symlink" && continue
