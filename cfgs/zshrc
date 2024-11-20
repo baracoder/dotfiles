@@ -15,7 +15,7 @@ alias grep='grep --color=auto'
 alias cgrep='grep -r --include=\*.{cpp,h}'
 alias g=git
 alias lmap="nmap 192.168.0.0/24"
-alias open="xdg-open"
+[ "$OSTYPE" == linux* ] && alias open="xdg-open"
 alias psgrep='ps aux|grep -i'
 alias c='python -ic "from __future__ import division; from math import *; from random import *"'
 alias htserv='python -m SimpleHTTPServer 8000'
