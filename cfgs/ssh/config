@@ -1,3 +1,5 @@
+Include /Users/hfries/.colima/ssh_config
+
 #ForwardX11 yes
 ForwardAgent yes
 # timeout beim verbinden
