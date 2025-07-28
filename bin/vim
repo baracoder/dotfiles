@@ -1,5 +1,5 @@
 #!/bin/sh
 
-[ -n "$SSH_TTY" ] && exec vi $*
+#[ -n "$SSH_TTY" ] && exec vi $*
 
-exec codium -nw $*
+exec hx $*
