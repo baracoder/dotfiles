@@ -1,0 +1,5 @@
+[editor]
+bufferline = "multiple"
+
+[editor.lsp]
+display-inlay-hints = true

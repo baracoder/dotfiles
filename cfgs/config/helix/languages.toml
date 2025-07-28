@@ -1,0 +1,16 @@
+[language-server.omnisharp]
+timeout = 60
+
+[[language]]
+name = "c-sharp"
+auto-format = true
+formatter = { command = "csharpier", args=["format"] }
+
+
+[language-server.codebook]
+command = "codebook-lsp"
+args = ["serve"]
+
+[[language]]
+name = "markdown"
+language-servers = ["codebook"]
