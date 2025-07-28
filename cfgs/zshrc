@@ -14,6 +14,7 @@ alias ls='ls --color=auto -p'
 alias grep='grep --color=auto'
 alias cgrep='grep -r --include=\*.{cpp,h}'
 alias g=git
+alias lg='lazygit'
 alias lmap="nmap 192.168.0.0/24"
 [ "$OSTYPE" == linux* ] && alias open="xdg-open"
 alias psgrep='ps aux|grep -i'
