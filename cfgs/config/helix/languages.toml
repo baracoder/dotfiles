@@ -1,16 +1,25 @@
 [language-server.omnisharp]
 timeout = 60
 
-[[language]]
-name = "c-sharp"
-auto-format = true
-formatter = { command = "csharpier", args=["format"] }
-
+[language-server.copilot-language-server]
+command = "copilot-language-server"
+args = [ "--stdio" ]
 
 [language-server.codebook]
 command = "codebook-lsp"
 args = ["serve"]
 
 [[language]]
+name = "c-sharp"
+auto-format = true
+formatter = { command = "csharpier", args=["format"] }
+language-servers = [ "omnisharp", "codebook", "copilot-language-server"]
+
+[[language]]
 name = "markdown"
-language-servers = ["codebook"]
+language-servers = ["codebook", "copilot-language-server"]
+
+[[language]]
+name = "nix"
+auto-format = true
+language-servers = [ "lixd", "codebook", "copilot-language-server"]
