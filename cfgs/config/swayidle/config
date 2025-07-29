@@ -1,1 +1,0 @@
-timeout 300 'gtklock -d && sleep 2 && hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on'

@@ -1,5 +1,0 @@
-#!/bin/sh
-
-#[ -n "$SSH_TTY" ] && exec vi $*
-
-exec hx $*

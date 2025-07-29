@@ -1,3 +1,0 @@
-#!/bin/bash
-
-find $1 -print0 -type d |xargs -0 du -h | sort -hr | head -50

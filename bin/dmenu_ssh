@@ -1,6 +1,0 @@
-#!/bin/bash
-
-source ~/.dmenurc
-
-roxterm -e bash -c "ssh $(cat ~/.ssh/config | egrep '^Host\ [a-zA-Z0-9]' |
-grep -v -e github -e bitbucket | awk '{print $2}' | dmenu -b -i -p 'ssh$ ')"

@@ -23,6 +23,7 @@ alias htserv='python -m SimpleHTTPServer 8000'
 alias ec='emacsclient -nc'
 alias kl='kubectl'
 alias kx='kubectx'
+alias vim=hx
 
 alias -g G='|grep'
 alias -g GR='|grep -iR'

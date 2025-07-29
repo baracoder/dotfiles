@@ -1,2 +1,0 @@
-#!/bin/bash
-sudo nice ionice emerge --alert y --jobs 4 --load-average 8 -avq $*

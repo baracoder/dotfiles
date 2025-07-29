@@ -1,6 +1,0 @@
-#!/bin/bash
-# show matching password entry
-
-[ "$@" = "" ] && exit 1
-
-gpg --output=- ~/.passwd.gpg |grep $@ |less
