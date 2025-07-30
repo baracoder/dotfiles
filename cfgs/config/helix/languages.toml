@@ -1,9 +1,8 @@
 [language-server.omnisharp]
 timeout = 60
 
-[language-server.copilot-language-server]
-command = "copilot-language-server"
-args = [ "--stdio" ]
+[language-server.helix-gpt]
+command = "helix-gpt"
 
 [language-server.codebook]
 command = "codebook-lsp"
@@ -13,13 +12,13 @@ args = ["serve"]
 name = "c-sharp"
 auto-format = true
 formatter = { command = "csharpier", args=["format"] }
-language-servers = [ "omnisharp", "codebook", "copilot-language-server"]
+language-servers = [ "omnisharp", "codebook", "helix-gpt"]
 
 [[language]]
 name = "markdown"
-language-servers = ["codebook", "copilot-language-server"]
+language-servers = ["codebook", "helix-gpt"]
 
 [[language]]
 name = "nix"
 auto-format = true
-language-servers = [ "lixd", "codebook", "copilot-language-server"]
+language-servers = [ "nixd", "codebook", "helix-gpt"]
