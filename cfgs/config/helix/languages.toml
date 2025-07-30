@@ -3,6 +3,7 @@ timeout = 60
 
 [language-server.helix-gpt]
 command = "helix-gpt"
+environment = { "HANDLER"="copilot" }
 
 [language-server.codebook]
 command = "codebook-lsp"
