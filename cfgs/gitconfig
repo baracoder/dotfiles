@@ -84,6 +84,10 @@
 	defaultBranch = main
 [credential]
 	helper = store
+
+[rebase]
+	autoStash = true
+
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
