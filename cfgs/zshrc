@@ -1,3 +1,7 @@
+
+# for profiling startup time
+#zmodload zsh/zprof
+
 source ~/.zshrc.grml
 
 if [ -n "${commands[fzf-share]}" ]; then
@@ -121,3 +125,5 @@ unset -f zed
 
 # direnv hook
 eval "$(direnv hook zsh)"
+
+#zprof
