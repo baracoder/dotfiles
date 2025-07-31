@@ -9,11 +9,14 @@ environment = { "HANDLER"="copilot" }
 command = "codebook-lsp"
 args = ["serve"]
 
+[language-server.typos]
+command = "typos-lsp"
+
 [[language]]
 name = "c-sharp"
 auto-format = true
 formatter = { command = "csharpier", args=["format"] }
-language-servers = [ "omnisharp", "codebook", "helix-gpt"]
+language-servers = [ "omnisharp", "typos", "helix-gpt"]
 
 [[language]]
 name = "markdown"
@@ -22,4 +25,4 @@ language-servers = ["codebook", "helix-gpt"]
 [[language]]
 name = "nix"
 auto-format = true
-language-servers = [ "nixd", "codebook", "helix-gpt"]
+language-servers = [ "nixd", "typos", "helix-gpt"]
