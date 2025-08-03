@@ -12,6 +12,14 @@ args = ["serve"]
 [language-server.typos]
 command = "typos-lsp"
 
+[language-server.harper]
+command = "harper-ls"
+args = ["--stdio"]
+
+[language-server.harper.config.harper-ls.linters]
+SpellCheck = true
+SentenceCapitalization = true
+
 [[language]]
 name = "c-sharp"
 auto-format = true
@@ -20,7 +28,7 @@ language-servers = [ "omnisharp", "typos", "helix-gpt"]
 
 [[language]]
 name = "markdown"
-language-servers = ["codebook", "helix-gpt"]
+language-servers = ["harper", "helix-gpt"]
 
 [[language]]
 name = "nix"
