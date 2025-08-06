@@ -1,6 +1,7 @@
 [editor]
 bufferline = "multiple"
 end-of-line-diagnostics = "hint"
+clipboard-provider = "wayland"
 
 [editor.inline-diagnostics]
 cursor-line = "error"
