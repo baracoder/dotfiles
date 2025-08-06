@@ -16,6 +16,13 @@ command = "typos-lsp"
 command = "harper-ls"
 args = ["--stdio"]
 
+[language-server.csharp-ls]
+command = "csharp-ls"
+
+[language-server.roslyn-ls]
+command = "Microsoft.CodeAnalysis.LanguageServer"
+args = ["--stdio", "--logLevel=Information", "--extensionLogDirectory=/tmp"]
+
 [language-server.harper.config.harper-ls.linters]
 SpellCheck = true
 SentenceCapitalization = true
@@ -24,7 +31,7 @@ SentenceCapitalization = true
 name = "c-sharp"
 auto-format = true
 formatter = { command = "csharpier", args=["format"] }
-language-servers = [ "omnisharp", "typos", "helix-gpt"]
+language-servers = [ "csharp-ls", "typos", "helix-gpt"]
 
 [[language]]
 name = "markdown"
