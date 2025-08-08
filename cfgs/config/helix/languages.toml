@@ -18,10 +18,12 @@ args = ["--stdio"]
 
 [language-server.csharp-ls]
 command = "csharp-ls"
+timeout = 60
 
 [language-server.roslyn-ls]
 command = "Microsoft.CodeAnalysis.LanguageServer"
 args = ["--stdio", "--logLevel=Information", "--extensionLogDirectory=/tmp"]
+timeout = 60
 
 [language-server.harper.config.harper-ls.linters]
 SpellCheck = true
