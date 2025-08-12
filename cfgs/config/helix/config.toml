@@ -2,6 +2,13 @@
 bufferline = "multiple"
 end-of-line-diagnostics = "hint"
 clipboard-provider = "wayland"
+trim-trailing-whitespace = true
+
+[editor.auto-save]
+focus-lost = true
+
+[editor.indent-guides]
+render = true
 
 [editor.inline-diagnostics]
 cursor-line = "error"
