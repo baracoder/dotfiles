@@ -1,7 +1,7 @@
 #!/usr/bin/zsh
 # Change the above to bash if needed. Tested on zsh first.
 # Copyright (c) 2025 Quantius Benignus
-# 
+#
 # THE SCRIPT IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 # FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -12,8 +12,8 @@
 #--------------------------------------------------------------------------
 
 # NAME: voluble
-# PREREQUSITES: 
-#  - piper installation (see https://github.com/rhaspi/piper) 
+# PREREQUSITES:
+#  - piper installation (see https://github.com/rhaspi/piper)
 #  - optionally, a recent version of 'sox' from your system's repositories.
 #  - optionally, a speech dispatcher installation (preinstalled in many distributions)
 #  - recommended, a local LLM engine with a small but capable model (Gemma3-4B) to summarize sellected text
@@ -68,6 +68,7 @@ if [ -e "$XDG_RUNTIME_DIR/voluble.tmp" ]; then
     if [ $# -gt 0 ]; then
         if [[ $1 == -s ]]; then
             if [[ -n LLModel ]]; then
+                exit 1
                 #Sending data to LLM for summarization (Please, adjust command line to match your inference engine syntax):
                 summary=$($llam -t 8 --temp 0 -fa --top-p 0.95 -mli --no-mmap --mlock --no-display-prompt --no-perf --no-warmup -no-cnv -c 8192 -ngl 99 -m $LLModel 2>/dev/null \
                 -p "<start_of_turn>user\nYou are Gemma3. You are helpful assistant who is great at summarizing text. Summarize the following to a sufficient minimum:\n${data}<end_of_turn>\n<start_of_turn>model" )
@@ -82,19 +83,25 @@ if [ -e "$XDG_RUNTIME_DIR/voluble.tmp" ]; then
             fi
         else
             # multiple arguments are ignored
-            data="Invalid argument. $0 works only with the Voluble GNOME shell extension" 
+            data="Invalid argument. $0 works only with the Voluble GNOME shell extension"
         fi
     fi
 else
     data="All dependencies are satisfied. You can now use the Voluble GNOME shell extension."
 fi
-# Process data 
+# Process data
+
+# Change model if german language is detected
+if head $XDG_RUNTIME_DIR/voluble.tmp | langid | grep -q "'de'"; then
+  pvoice="$HOME/Downloads/de_DE-thorsten-high.onnx"
+fi
+
 if [ use_spd = 1 ]; then
     spd-say -w "$data"
-else 
-    if [ use_sox = 1 ]; then 
+else
+    if [ use_sox = 1 ]; then
         echo "$data" | piper --model $pvoice --output-raw 2>/dev/null | play -q -r $srate -b 16 --encoding signed-integer -t raw - 2>/dev/null
     else
-        echo "$data" | piper --model $pvoice --output-raw 2>/dev/null | aplay -r $srate -f S16_LE -t raw - 2>/dev/null 
+        echo "$data" | piper --model $pvoice --output-raw 2>/dev/null | aplay -r $srate -f S16_LE -t raw - 2>/dev/null
     fi
 fi
