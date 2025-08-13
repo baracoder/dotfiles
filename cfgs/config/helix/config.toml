@@ -19,9 +19,16 @@ display-inlay-hints = true
 display-progress-messages = true
 
 [keys.normal]
+# Move lines up / down
 C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+
+# Make star behave like in vim
+"*" = [ "move_prev_word_start", "move_next_word_end", "search_selection_detect_word_boundaries" ]
+
+# Start tools
 C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
+
 
 [editor.soft-wrap]
 enable = true
