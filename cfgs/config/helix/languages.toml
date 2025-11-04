@@ -29,11 +29,14 @@ timeout = 60
 SpellCheck = true
 SentenceCapitalization = true
 
+[language-server.csharp-language-server]
+command = "csharp-language-server"
+
 [[language]]
 name = "c-sharp"
 auto-format = true
 formatter = { command = "csharpier", args=["format"] }
-language-servers = [ "csharp-ls", "typos", "helix-gpt"]
+language-servers = [ "csharp-language-server", "typos", "helix-gpt"]
 
 [[language]]
 name = "markdown"
