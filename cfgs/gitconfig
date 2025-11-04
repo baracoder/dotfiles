@@ -3,7 +3,7 @@
     email = baracoder@googlemail.com
 
 [core]
-    editor = vim
+    editor = hx
     excludesfile = ~/.gitignore
 
 [merge]
