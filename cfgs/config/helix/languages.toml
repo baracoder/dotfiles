@@ -1,6 +1,9 @@
 [language-server.omnisharp]
 timeout = 60
 
+[language-server.vscode-json-language-server.config]
+allowComments = true
+
 [language-server.helix-gpt]
 command = "helix-gpt"
 environment = { "HANDLER"="copilot" }
