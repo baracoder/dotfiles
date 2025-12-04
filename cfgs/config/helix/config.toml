@@ -3,6 +3,7 @@ bufferline = "multiple"
 end-of-line-diagnostics = "hint"
 clipboard-provider = "wayland"
 trim-trailing-whitespace = true
+rainbow-brackets = true
 
 [editor.auto-save]
 focus-lost = true
