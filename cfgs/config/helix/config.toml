@@ -4,6 +4,7 @@ end-of-line-diagnostics = "hint"
 clipboard-provider = "wayland"
 trim-trailing-whitespace = true
 rainbow-brackets = true
+cursorline = true
 
 [editor.auto-save]
 focus-lost = true
