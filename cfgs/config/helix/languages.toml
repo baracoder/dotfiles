@@ -39,7 +39,7 @@ command = "csharp-language-server"
 name = "c-sharp"
 auto-format = true
 formatter = { command = "csharpier", args=["format"] }
-language-servers = [ "csharp-language-server", "typos", "helix-gpt"]
+language-servers = [ "csharp-ls", "typos", "helix-gpt"]
 
 [[language]]
 name = "markdown"
