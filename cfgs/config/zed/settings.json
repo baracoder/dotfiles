@@ -15,6 +15,13 @@
   "project_panel": {
     "dock": "right"
   },
+  "auto_install_extensions": {
+    "basher": true,
+    "nix": true,
+    "dockerfile": true,
+    "html": true,
+    "vue": true
+  },
   "features": { "edit_prediction_provider": "copilot" },
   "auto_update": false
 }
