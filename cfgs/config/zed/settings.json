@@ -7,6 +7,11 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "diagnostics": {
+    "inline": {
+      "enabled": true
+    }
+  },
   "soft_wrap": "editor_width",
   "ui_font_size": 16,
   "buffer_font_size": 14,
