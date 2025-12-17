@@ -25,8 +25,9 @@ display-progress-messages = true
 C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
 
-# Make star behave like in vim
+# Word under cursor search
 "*" = [ "move_prev_word_start", "move_next_word_end", "search_selection_detect_word_boundaries" ]
+"@" = [ "move_prev_word_start", "move_next_word_end", "search_selection_detect_word_boundaries", "global_search" ]
 
 # Start tools
 C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
