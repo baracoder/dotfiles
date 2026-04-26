@@ -1,4 +1,4 @@
-all: ~/.zshrc.grml ~/helix.vim
+all: ~/.zshrc.grml ~/helix.vim elite-bindings
 	./relink
 	rm -f ~/.xsession
 
@@ -7,3 +7,8 @@ all: ~/.zshrc.grml ~/helix.vim
 
 ~/helix.vim:
 	git clone https://github.com/chtenb/helix.vim ~/helix.vim/
+
+elite-bindings:
+	cd ./elite-bindings && ./setup-symlink
+
+.PHONY: elite-bindings
