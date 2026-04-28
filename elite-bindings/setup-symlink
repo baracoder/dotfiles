@@ -1,4 +1,6 @@
 #!/bin/sh
 ELITE_DIR=~/steamlibrary/SteamLibrary/steamapps/compatdata/359320
-rm -r $ELITE_DIR/pfx/drive_c/users/steamuser/AppData/Local/Frontier\ Developments/Elite\ Dangerous/Options/Bindings
-ln -sf "$PWD/Bindings" $ELITE_DIR/pfx/drive_c/users/steamuser/AppData/Local/Frontier\ Developments/Elite\ Dangerous/Options/Bindings
+if [ -e $ELITE_DIR  ]; then
+  rm -r $ELITE_DIR/pfx/drive_c/users/steamuser/AppData/Local/Frontier\ Developments/Elite\ Dangerous/Options/Bindings
+  ln -sf "$PWD/Bindings" $ELITE_DIR/pfx/drive_c/users/steamuser/AppData/Local/Frontier\ Developments/Elite\ Dangerous/Options/Bindings
+fi
