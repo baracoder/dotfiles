@@ -233,9 +233,11 @@ layout {
 }
 
 
-spawn-at-startup "ashell"
+// spawn-at-startup "ashell"
 spawn-at-startup "kanshi"
-spawn-at-startup "walker" "--gapplication-service"
+spawn-at-startup "vibepanel"
+
+// spawn-at-startup "swaync"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -305,7 +307,7 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return hotkey-overlay-title="Open a Terminal" { spawn "ptyxis" "-s"; }
     // Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Mod+D {spawn "walker";}
+    Mod+D {spawn "anyrun";}
     Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn-sh "noctalia-shell ipc call lockScreen lock && sleep 2 && niri msg action power-off-monitors" ; }
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
