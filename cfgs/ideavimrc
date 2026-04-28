@@ -2,7 +2,15 @@
 set ignorecase smartcase
 # set incsearch
 
-source ~/helix.vim/helix.idea.vim
+source ~/.local/share/helix.vim/helix.idea.vim
 
 " Restore search with *
 nnoremap * *
+
+" Move current line down
+nnoremap <C-j> :action MoveLineDown<CR>
+vnoremap <C-j> :action MoveLineDown<CR>
+
+" Move current line up
+nnoremap <C-k> :action MoveLineUp<CR>
+vnoremap <C-k> :action MoveLineUp<CR>
