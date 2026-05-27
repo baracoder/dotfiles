@@ -1,12 +1,12 @@
 # Font Configuration
 font-size = 12
+font-family = Adwaita Mono
 
 # Window Configuration
-window-decoration = false
+window-decoration = true
 window-padding-x = 12
 window-padding-y = 12
-background-opacity = 1.0
-background-blur-radius = 32
+background-opacity = 0.95
 
 # Cursor Configuration
 cursor-style = block
@@ -17,11 +17,12 @@ scrollback-limit = 3023
 
 # Terminal features
 mouse-hide-while-typing = true
-copy-on-select = false
+copy-on-select = true
 confirm-close-surface = false
 
 # Disable annoying copied to clipboard
-app-notifications = no-clipboard-copy,no-config-reload
+# app-notifications = no-clipboard-copy,no-config-reload
+notify-on-command-finish = unfocused
 
 # Key bindings for common actions
 #keybind = ctrl+c=copy_to_clipboard
@@ -48,4 +49,4 @@ keybind = shift+enter=text:\n
 gtk-single-instance = true
 
 # Dank color generation
-theme = dankcolors
+# theme = dankcolors
