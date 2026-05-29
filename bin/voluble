@@ -1,4 +1,4 @@
-#!/usr/bin/zsh
+#!/usr/bin/env zsh
 # Change the above to bash if needed. Tested on zsh first.
 # Copyright (c) 2025 Quantius Benignus
 #
@@ -38,12 +38,6 @@ llam="ollama"
 #IMPORTANT: If you use another inference engine, check the invocation on line 71 and adjust the command line parameters as needed.
 #---END USER CONFIG BLOCK------------------------------------------------------------------------
 
-# Disable emoji filtering for now
-# emoji="\U1f300-\U1f5ff\U1f900-\U1f9ff\U1f600-\U1f64f\U1f680-\U1f6ff\U2600-\U26ff\U2700-\U27bf\U1f1e6-\U1f1ff\U1f191-\U1f251\U1f004\U1f0cf\U1f170-\U1f171\U1f17e-\U1f17f\U1f18e\U3030\U2b50\U2b55\U2934-\U2935\U2b05-\U2b07\U2b1b-\U2b1c\U3297\U3299\U303d\U00a9\U00ae\U2122\U23f3\U24c2\U23e9-\U23ef\U25b6\U23f8-\U23fa"
-# LC_ALL=en_US.UTF-8 sed -i "$XDG_RUNTIME_DIR/voluble.tmp" -e "s/[$(printf $emoji)]//g"
-
-# Strip @ in @name
-sed -i "$XDG_RUNTIME_DIR/voluble.tmp" -e "s/\B@\b//g"
 
 #---CHECK DEPENDENCIES. This block can be commented out once dependencies confirmed-----------------------------------
 if [[ use_sox == 1 ]]; then
@@ -72,7 +66,7 @@ if [ -e "$XDG_RUNTIME_DIR/voluble.tmp" ]; then
         if [[ $1 == -s ]]; then
             if [[ -n LLModel ]]; then
                 #Sending data to LLM for summarization (Please, adjust command line to match your inference engine syntax):
-                summary=$(echo "<start_of_turn>user\nYou are Gemma3. You are helpful assistant who is great at summarizing text. Summarize the following to a sufficient minimum:\n${data}<end_of_turn>\n<start_of_turn>model"|ollama run $LLModel 2>/dev/null  )
+                summary=$(echo "<start_of_turn>user\nYou are helpful assistant who is great at summarizing text. Summarize the following to a sufficient minimum:\n${data}<end_of_turn>\n<start_of_turn>model"|ollama run $LLModel 2>/dev/null  )
                 summary="${summary//\*/}"
                 data="${summary/\[end of text\]}"
                 #Store as an LLM prompt for subsequent ingestion by [Zshelf](https://github.com/QuantiusBenignus/Zshelf)
@@ -82,16 +76,20 @@ if [ -e "$XDG_RUNTIME_DIR/voluble.tmp" ]; then
             fi
         else
             # multiple arguments are ignored
-            data="Invalid argument. $0 works only with the Voluble GNOME shell extension"
+            data="Invalid arguments: $*"
         fi
     fi
 else
-    data="All dependencies are satisfied. You can now use the Voluble GNOME shell extension."
+    # Not called from extension, paste straight from clipboard
+    data="$(wl-paste -p)"
 fi
 # Process data
 
+# Strip @ in @name
+data=$(sed  -e "s/\B@\b//g" <<< "$data")
+
 # Change model if german language is detected
-if head $XDG_RUNTIME_DIR/voluble.tmp | langid | grep -q "'de'"; then
+if echo "$data"| head | langid | grep -q "'de'"; then
   pvoice="$HOME/Downloads/de_DE-thorsten-high.onnx"
 fi
 
