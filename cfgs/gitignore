@@ -11,4 +11,5 @@ google.json
 /.flatpak-builder
 .ionide
 *secret*
+settings.local.json
 
