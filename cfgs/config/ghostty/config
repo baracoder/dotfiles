@@ -8,6 +8,9 @@ window-padding-x = 12
 window-padding-y = 12
 background-opacity = 0.95
 
+window-width = 120
+window-height = 36
+
 # Cursor Configuration
 cursor-style = block
 cursor-style-blink = true
