@@ -37,6 +37,9 @@ keybind = ctrl+plus=increase_font_size:1
 keybind = ctrl+minus=decrease_font_size:1
 keybind = ctrl+zero=reset_font_size
 
+keybind = ctrl+enter=unbind
+keybind = ctrl+shift+enter=toggle_fullscreen
+
 # Material 3 UI elements
 unfocused-split-opacity = 0.7
 unfocused-split-fill = #44464f
