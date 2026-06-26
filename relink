@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
 
 find cfgs -type f -o -type l | while read SRC; do
-    echo -ne "linking $SRC\t"
-    TARGET=".${SRC##cfgs/}"
-    [ -e ~/$TARGET -a ! -L ~/$TARGET ] && echo -e "\033[31m$TARGET is not a symlink\033[0m" && continue
-    mkdir -p ` dirname ~/$TARGET`
-    ln -sf  $PWD/$SRC ~/$TARGET && echo "OK" || echo "!!"
+  TARGET=".${SRC##cfgs/}"
+  # skip nvim
+  if expr "$SRC" : "cfgs/config/nvim/" >/dev/null; then
+    continue
+  fi
+  echo -ne "linking $SRC\t"
+
+  [ -e ~/$TARGET -a ! -L ~/$TARGET ] && echo -e "\033[31m$TARGET is not a symlink\033[0m" && continue
+  mkdir -p $(dirname ~/$TARGET)
+  ln -sf $PWD/$SRC ~/$TARGET && echo "OK" || echo "!!"
 done
