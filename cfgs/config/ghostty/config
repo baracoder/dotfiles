@@ -16,7 +16,7 @@ window-height = 36
 cursor-style = block
 cursor-style-blink = true
 
-# Scrollback
+# Scrollback is in bytes not lines
 scrollback-limit = 30230
 
 # Terminal features
