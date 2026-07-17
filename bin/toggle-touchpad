@@ -1,0 +1,7 @@
+#!/bin/sh
+
+TO=disabled
+gsettings get org.gnome.desktop.peripherals.touchpad send-events | grep -q disabled && TO=enabled
+gsettings set org.gnome.desktop.peripherals.touchpad send-events $TO
+
+notify-send "Touchpad $TO"
