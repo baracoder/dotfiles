@@ -2,7 +2,7 @@
 set ignorecase smartcase
 # set incsearch
 
-source ~/.local/share/helix.vim/helix.idea.vim
+" source ~/.local/share/helix.vim/helix.idea.vim
 
 " Restore search with *
 nnoremap * *
