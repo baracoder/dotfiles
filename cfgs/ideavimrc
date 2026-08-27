@@ -1,6 +1,6 @@
-# set clipboard+=unnamed
+set clipboard+=unnamed
 set ignorecase smartcase
-# set incsearch
+set incsearch
 
 " source ~/.local/share/helix.vim/helix.idea.vim
 
